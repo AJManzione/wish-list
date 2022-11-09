@@ -1,5 +1,10 @@
 const router = require("express").Router();
-router.get('/signup', async (req, res) => {
+const bcrypt = require("bcrypt");
+const { User } = require("../../models");
+
+router.post("/signup", async (req, res) => {
+  console.log("test");
+
   try {
     /* encrypt the password, and store user data to the db */
     const passwordHash = await bcrypt.hash(req.body.password, 10);
@@ -17,15 +22,18 @@ router.get('/signup', async (req, res) => {
         req.session.username = userData.username;
         req.session.loggedIn = true;
 
-      /* Send response back to client */
-      res.status(200).json({ success: true, message: "User created successfully"});
+        /* Send response back to client */
+        res
+          .status(200)
+          .json({ success: true, message: "User created successfully" });
       });
     } else {
       res.status(400).json("User not created");
     }
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
-  }  
+  }
 });
 
 module.exports = router;

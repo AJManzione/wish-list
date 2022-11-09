@@ -1,30 +1,31 @@
-const loginFormHandler = async function(event) {
-    event.preventDefault();
-  
-    const usernameEl = document.querySelector("#username-login")；
-    const passwordEl = document.querySelector("#password-login");
+const loginFormHandler = async function (event) {
+  event.preventDefault();
 
-    if(passwordEl.value.length < 8) {
-      alert("Password needs to be at least 8 characters long.");
-      return;
-    }
+  const usernameEl = document.querySelector("#username-login");
+  const passwordEl = document.querySelector("#password-login");
 
-    const response = await fetch("/api/user/login", {
-      method: "post",
-      body: JSON.stringify({
-        username: usernameEl.value,
-        password: passwordEl.value
-      }),
-      headers: { "Content-Type": "application/json" }
-    });
-    
-    if(!response.ok) {
-      alert(response.json());
-      return;
-    }
+  if (passwordEl.value.length < 8) {
+    alert("Password needs to be at least 8 characters long.");
+    return;
+  }
 
-    document.location.replace("/dashboard");
+  const response = await fetch("/api/user/login", {
+    method: "post",
+    body: JSON.stringify({
+      username: usernameEl.value,
+      password: passwordEl.value,
+    }),
+    headers: { "Content-Type": "application/json" },
+  });
 
-  };
-  
-  document.querySelector(".login-form").addEventListener("submit", loginFormHandler);
+  if (!response.ok) {
+    alert(response.json());
+    return;
+  }
+
+  document.location.replace("/dashboard");
+};
+
+document
+  .querySelector("#login-btn")
+  .addEventListener("click", loginFormHandler);
