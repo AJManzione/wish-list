@@ -1,54 +1,54 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Product extends Model {}
 Product.init(
-    {
-      id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    link: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        isUrl: true,
       },
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false,
+    },
+    price: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: true,
+    },
+    category_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "category",
+        key: "id",
       },
-      link: {
-        type: DataTypes.URL,
-        allowNull: true,
-        validate {
-            isUrl: true,
-        }
-      },
-      price: {
-        type: DataTypes.DECIMAl(10,2),
-        allowNull: true,
-      },
-      category_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'category',
-            key: 'id',
-        }
     },
     registry_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'registry',
-            key: 'id',
-        }
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "registry",
+        key: "id",
+      },
     },
-    },
-    {
-      sequelize,
-      freezeTableName: true,
-      underscored: true,
-      modelName: 'product',
-      timestamps: false,
-    }
-  );
-  
-  module.exports = product;
+  },
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "product",
+    timestamps: false,
+  }
+);
+
+module.exports = Product;
