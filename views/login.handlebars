@@ -1,3 +1,4 @@
+{{!-- login card --}}
 <div class="container mt-5">
     <div class="row d-flex, justify-content-center">
         <div class="col-md-4">
@@ -24,6 +25,61 @@
                         Log in
                     </button>
                     <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- Sign up instead button --}}
+
+
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-6 d-flex justify-content-center">
+            <a type="button" data-toggle="modal" data-target="#signupModal">
+                Sign Up Instead
+            </a>
+        </div> 
+    </div>
+</div>
+
+
+{{!-- Sign up Modal --}} {{!-- Pops up after button is pressed --}}
+
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Create an Account</h3>
+                <button type="button" class="btn-close" data-dismiss="modal">
+                </button>
+            </div>
+
+
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12"> 
+                        <form class="signup-form">
+                            <p>First name</p>
+                            <input type="name" class="w-100" id="firstname-signup">
+                            <label for="firstname-signup"></label>
+                            <p>Last name</p>
+                            <input type="name" class="w-100" id="lastname-signup">
+                            <label for="lastname-signup"></label>
+                            <p>Username</p>
+                            <input type="name" class="w-100" id="username-signup">
+                            <label for="username-signup"></label>
+                            <p>Password</p>
+                            <input type="password" class="w-100" id="password-signup">
+                            <label for="password-signup"></label>
+                            <div class="modal-footer">
+                                <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
