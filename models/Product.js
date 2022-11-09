@@ -32,7 +32,15 @@ Product.init(
             model: 'category',
             key: 'id',
         }
-    }
+    },
+    registry_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'registry',
+            key: 'id',
+        }
+    },
     },
     {
       sequelize,
