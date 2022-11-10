@@ -64,3 +64,9 @@ router.get("/registry", (req, res) => {
   });
 });
 module.exports = router;
+
+
+
+router.get('registry/:id', (req, res) => {
+  
+})
