@@ -1,8 +1,8 @@
 <div class="container mt-5">
     <div class="row d-flex justify-content-center">
         <div class="col-md-6">
-            <div class="card border-0">
-                <div class="card-header border-0">
+            <div class="card">
+                <div class="card-header">
                     <h4 class="text-center header-text">New Registry</h4>
                 </div>
                 <div class="card-body">
@@ -14,12 +14,13 @@
                         <label for="reg-desc" class="label">Describe your registry</label>
                         <br>
                         <textarea class="form-control " aria-label="With textarea" id="desc"></textarea>
-                        <br><br>
+                        <br>
                         <label for="date">Registry expiration</label>
                         <br>
                         <p>Date: <input type="text" id="datepicker"></p>
-                        <br>
-                        <button id="create-registry-btn" class="btn btn-primary">Submit</button>
+                        <div class="card-footer d-flex justify-content-center">
+                            <button id="create-registry-btn" class="btn btn-primary">Submit</button>
+                        </div>
                     </form>
                 </div>
             </div>

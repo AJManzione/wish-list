@@ -1,19 +1,42 @@
-<products-container class="d-flex flex-column align-items-center">
-    <h2 class="text-center">{{registry.name}}</h2>
-    <p class="text-center">{{registry.description}}</p>
-</products-container>
-{{#if hasProducts}}
-<products-container class="d-flex flex-column align-items-center">
-    {{#each registry.products as |product|}}
-    {{> product}}
-    {{/each}}
-</products-container>
-<h3 class="text-center">Total: ${{totalCost}}</h3>
-{{else}}
-<p class="text-center">This registry is empty</p>
-{{/if}}
-<buttons-container class="d-flex flex-column align-items-center">
-    <button class="btn-primary w-25 mt-3 rounded">Add Product</button>
-    <button class="btn-primary w-25 mt-3 rounded">Edit Registry</button>
-    <button class="btn-primary w-25 mt-3 rounded">Delete Registry</button>
-</buttons-container>
+
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-9">
+            <div class="card d-flex justify-content-center">
+                <div class="card-header">
+                    <h2 class="text-center">{{registry.name}}</h2>
+                    <p class="text-center">{{registry.description}}</p>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li class="text-center">
+                            <button class="btn-primary w-25 mt-3 rounded">Add Product</button>
+                            <button class="btn-primary w-25 mt-3 rounded">Edit Registry</button>
+                            <button class="btn-primary w-25 mt-3 rounded">Delete Registry</button>
+                        </li>
+                        <li>
+                            {{#if hasProducts}}
+                            {{#each registry.products as |product|}}
+                            {{> product}}
+                            {{/each}}
+                        </li>
+                        <li> 
+                            {{else}}
+                            <br><br>
+                            <p class="text-center">Add products to your registry!</p>
+                        </li>
+                            {{/if}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{!-- its okay will, I got you ;) -Anthony  --}}
+
+
+
+
