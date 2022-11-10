@@ -10,9 +10,24 @@ a {
     color: rgb(135, 135, 135);
 }
 
-.navbar {
-    min-height: 13vh;
-    font-size: 30px;
+.navbar-nav {
+    font-size: 26px;
+    margin-left: auto;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.nav-link {
+    margin: 30px;
+}
+
+.nav-item button {  
+    text-decoration: none;
+    background-color: none;
+    border: none;
+    background: transparent;
 }
 
 a:hover {
@@ -20,3 +35,18 @@ a:hover {
     text-decoration: none;
     transition: 1s;
 }
+
+.create-registry {
+    font-size: 20px;
+}
+
+.create-registry:hover {
+    color: rgb(171, 146, 2);
+    transition: .5s;
+}
+
+@media screen and (max-width: 992px) {
+    .logo {
+      display: none;
+    }
+  }
