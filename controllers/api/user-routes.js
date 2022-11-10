@@ -26,11 +26,24 @@ router.post("/signup", async (req, res) => {
           .json({ success: true, message: "User created successfully" });
       });
     } else {
-      res.status(400).json("User not created");
+      res.status(401).json({ success: true, message: "Error creating user" });
     }
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+    let error = "Error creating user";
+    if (err.parent.errno) {
+      switch (err.parent.errno) {
+        case 1062:
+          error = "That user already exists";
+          break;
+
+        default:
+          console.log(err);
+          break;
+      }
+    } else {
+      console.log(err);
+    }
+    res.status(500).json({ success: false, message: error });
   }
 });
 
@@ -75,7 +88,9 @@ router.post("/login", async (req, res) => {
     });
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    res
+      .status(500)
+      .json({ success: false, message: "A server error occurred" });
   }
 });
 

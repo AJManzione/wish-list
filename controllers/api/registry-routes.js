@@ -7,36 +7,32 @@ const router = require("express").Router();
 
 // not working currently, trying to render the dashboard handlebars
 
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   console.log("Request to create a new registry received");
   try {
     /* User exists, create the registry */
 
-    const formatDate = new Date(req.body.date)
+    const formatDate = new Date(req.body.date);
 
-      console.log("Creating registry " + req.body.name);
-      const registryData = await Registry.create({ 
-        name: req.body.name,
-        date: formatDate,
-        user_id: req.session.userId
-      });
-      if(registryData) {
-        res.status(200).json("Registry created successfully");
-      } else {
-        res.status(404).json("Registry not created");
-      }  
-  } catch(err) {
-    console.log(err)
+    console.log("Creating registry " + req.body.name);
+    const registryData = await Registry.create({
+      name: req.body.name,
+      date: formatDate,
+      user_id: req.session.userId,
+    });
+    if (registryData) {
+      res.status(200).json(registryData);
+    } else {
+      res.status(404).json({ message: "Registry not created" });
+    }
+  } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
-router.put('/:id', (req, res) => {
-  
-})
+router.put("/:id", (req, res) => {});
 
-router.delete('/:id', (req, res) => {
-
-})
+router.delete("/:id", (req, res) => {});
 
 module.exports = router;

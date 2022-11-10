@@ -1,32 +1,28 @@
 {{!-- login card --}}
-<div class="container mt-5">
-    <div class="row d-flex, justify-content-center">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Login</h3>
-                </div>
-                <div class="card-body">
-                    <form class="login-form">
-                        <label for="username-login">Username</label>
-                        <br>
-                        <input type="text" class="w-100 entry-field" id="username-login" />
-                        <br>
-                        <br>
-                        <label for="password-login">Password</label>
-                        <input type="password" class="w-100 entry-field" id="password-login" />
-                        <br>
-                        <br>
-                    </form>
-                </div>
-                <div class="card-footer d-flex justify-content-center">
-                    <br>
-                    <button type="submit" class="log" id="login-btn">
-                        Log in
-                    </button>
-                    <br>
-                </div>
-            </div>
+<div class="container mt-5 login-card">
+    <div class="card border-0 transparent-background shadow">
+        <div class="card-header border-0 transparent-background">
+            <h3 class="text-center header-text text-shadow">Login</h3>
+        </div>
+        <div class="card-body">
+            <form class="login-form">
+                <label for="username-login" class="label">Username</label>
+                <br>
+                <input type="text" class="w-100 entry-field rounded text-input" id="username-login" />
+                <br>
+                <br>
+                <label for="password-login" class="label">Password</label>
+                <input type="password" class="w-100 entry-field rounded text-input" id="password-login" />
+                <br>
+                <br>
+            </form>
+        </div>
+        <div class="card-footer d-flex justify-content-center border-0 transparent-background">
+            <br>
+            <button type="submit" class="w-25 btn" id="login-btn">
+                Log in
+            </button>
+            <br>
         </div>
     </div>
 </div>
@@ -34,11 +30,11 @@
 {{!-- Sign up instead button --}}
 
 
-<div class="container mt-5">
+<div class="container mt-4">
     <div class="row d-flex justify-content-center">
         <div class="col-sm-6 d-flex justify-content-center">
             <a type="button" data-toggle="modal" data-target="#signupModal">
-                Sign Up Instead
+                <button class="btn">Sign Up Instead</button>
             </a>
         </div>
     </div>
@@ -48,11 +44,13 @@
 {{!-- Sign up Modal --}} {{!-- Pops up after button is pressed --}}
 
 <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Create an Account</h3>
-                    <button type="button" class="btn-close" aria-label="Close">X</button>
+    <div class="modal-dialog shadow" role="document">
+        <div class="modal-content secondary-background border-0">
+            <div class="modal-header border-0">
+                <h3 class="modal-title header-text text-shadow">Create an Account</h3>
+                <button type="button" class="btn" data-dismiss="modal">
+                    X
+                </button>
             </div>
 
 
@@ -61,22 +59,19 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <form class="signup-form">
-                                <p>First name</p>
-                                <input type="name" class="w-100" id="firstname-signup">
+                                <p class="label">First name</p>
+                                <input type="name" class="w-100 rounded text-input" id="firstname-signup">
                                 <label for="firstname-signup"></label>
-                                <p>Last name</p>
-                                <input type="name" class="w-100" id="lastname-signup">
+                                <p class="label">Last name</p>
+                                <input type="name" class="w-100 rounded text-input" id="lastname-signup">
                                 <label for="lastname-signup"></label>
-                                <p>Username</p>
-                                <input type="name" class="w-100" id="username-signup">
+                                <p class="label">Username</p>
+                                <input type="name" class="w-100 rounded text-input" id="username-signup">
                                 <label for="username-signup"></label>
-                                <p>Password</p>
-                                <input type="password" class="w-100" id="password-signup">
-                                <label for="password-signup"></label>
-                                <div class="modal-footer">
-                                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" id="signup-btn">Sign
-                                        up</button>
-                                </div>
+                                <p class="label">Password</p>
+                                <input type="password" class="w-100 rounded text-input" id="password-signup">
+                                <button class="w-100 mt-4 mb-2 btn btn-lg rounded-3 border-0" id="signup-btn">Sign
+                                    up</button>
                             </form>
                         </div>
                     </div>

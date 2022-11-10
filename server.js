@@ -31,7 +31,7 @@ app.set("view engine", "handlebars");
 app.use(routes);
 
 app.get("/*", (req, res) => {
-  res.render("404");
+  res.render("404", { loggedIn: req.session.loggedIn });
 });
 
 sequelize.sync({ force: false }).then(() => {
