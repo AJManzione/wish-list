@@ -10,6 +10,10 @@ a {
     color: rgb(135, 135, 135);
 }
 
+.login-card {
+    max-width: 500px;
+}
+
 .navbar-nav {
     font-size: 26px;
     margin-left: auto;
@@ -20,14 +24,13 @@ a {
 }
 
 .nav-link {
-    margin: 30px;
+    margin: 6px;
 }
 
 .nav-item button {  
     text-decoration: none;
     background-color: none;
     border: none;
-    background: transparent;
 }
 
 a:hover {
@@ -48,5 +51,11 @@ a:hover {
 @media screen and (max-width: 992px) {
     .logo {
       display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        margin-right: 50%;
+        transform: translate(50%, 0);
     }
   }

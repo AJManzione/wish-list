@@ -23,7 +23,7 @@ const signUpFormHandler = async function (event) {
   });
 
   if (!response.ok) {
-    alert(response.json());
+    alert((await response.json()).message);
     return;
   }
 

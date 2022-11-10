@@ -7,7 +7,7 @@
 
 body {
   height: 100vh;
-  font-family: Helvetica, Arial, sans-serif;
+  /* font-family: Helvetica, Arial, sans-serif; */
   background-image: linear-gradient(var(--secondary-color), var(--primary-color))
 }
 
@@ -56,6 +56,7 @@ body {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   font-weight: bold;
+  padding-bottom: 7px;
 }
 
 .btn:hover {
@@ -74,6 +75,10 @@ body {
 
 .text-input {
   border: 2px solid var(--tertiary-color);
+}
+
+.text-shadow {
+  text-shadow: 3px 3px var(--tertiary-color);
 }
 
 .hr {
