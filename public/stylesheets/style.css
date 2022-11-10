@@ -7,7 +7,7 @@
 
 a {
     font-weight: 300;
-    color: rgb(135, 135, 135);
+    color: gray
 }
 
 .login-card {
@@ -40,6 +40,9 @@ a {
 .create-registry:hover {
     color: rgb(171, 146, 2);
     transition: .5s;
+}
+/* 
+.card-header, .card-footer {
 }
 
 #login-btn, #signup-btn {
@@ -79,4 +82,4 @@ a {
         margin-right: 50%;
         transform: translate(50%, 0);
     }
-  }
+  } */

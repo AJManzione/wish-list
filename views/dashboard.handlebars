@@ -1,6 +1,22 @@
-<section class="container-fluid">
-    <h2 class="header-text text-center text-shadow">Your Registries</h2>
-    <hr class="hr">
+
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <h2 class="header-text text-center text-shadow">Your Registries</h2>
+        <hr class="w-100">
+    </div>
+</div>
+
+
+
+
+<div class="container mt-4">
+    <div class="row d-flex justify-content-center">
+        <button id="create-registry" class="create-registry btn">Create New Registry +</button>
+    </div>
+</div>
+
+<br>
     <ul>
         {{#each registries as |registry| }}
         <li class="card">
@@ -11,11 +27,7 @@
         </li>
         {{/each}}
     </ul>
-    <div class="container mt-4">
-        <div class="row d-flex justify-content-center">
-            <button id="create-registry" class="create-registry btn">Create New Registry +</button>
-        </div>
-    </div>
+
 
     <script src="/javascript/dashboard.js"></script>
 
