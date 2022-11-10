@@ -33,16 +33,13 @@ router.get("/dashboard", async (req, res) => {
       },
     });
 
-    if (registryData.length > 0) {
-      const registries = registryData.get({ plain: true });
-      res.render("dashboard", {
-        registries: registries,
-        loggedIn: req.session.loggedIn,
-      });
-    } else {
-      /* if no registries, show "No registries for this user" */
-      res.render("dashboard", { posts: null, loggedIn: req.session.loggedIn });
-    }
+    const registries = registryData.map((registry) =>
+      registry.get({ plain: true })
+    );
+    res.render("dashboard", {
+      registries: registries,
+      loggedIn: req.session.loggedIn,
+    });
   }
 });
 
@@ -54,21 +51,15 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-
-
-
-
 router.get("/registry", (req, res) => {
   res.render("registry", {
-    loggedIn: req.session.loggedIn
+    loggedIn: req.session.loggedIn,
   });
 });
 module.exports = router;
 
-
-
-router.get('registry/:id', (req, res) => {
-  res.render('new-registry', {
-    loggedIn: req.session.loggedIn
+router.get("/registry/:id", (req, res) => {
+  res.render("new-registry", {
+    loggedIn: req.session.loggedIn,
   });
 });

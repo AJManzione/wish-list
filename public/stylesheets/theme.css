@@ -7,7 +7,6 @@
 
 body {
   height: 100vh;
-  /* font-family: Helvetica, Arial, sans-serif; */
   background-image: linear-gradient(var(--secondary-color), var(--primary-color))
 }
 
