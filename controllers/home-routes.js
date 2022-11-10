@@ -68,5 +68,7 @@ module.exports = router;
 
 
 router.get('registry/:id', (req, res) => {
-  
-})
+  res.render('new-registry', {
+    loggedIn: req.session.loggedIn
+  });
+});

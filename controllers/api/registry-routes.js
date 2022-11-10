@@ -11,11 +11,14 @@ router.post('/', async (req, res) => {
   console.log("Request to create a new registry received");
   try {
     /* User exists, create the registry */
+
+    const formatDate = new Date(req.body.date)
+
       console.log("Creating registry " + req.body.name);
       const registryData = await Registry.create({ 
         name: req.body.name,
-        date: req.body.date,
-        user_id: req.session.user_id
+        date: formatDate,
+        user_id: req.session.userId
       });
       if(registryData) {
         res.status(200).json("Registry created successfully");
@@ -23,18 +26,13 @@ router.post('/', async (req, res) => {
         res.status(404).json("Registry not created");
       }  
   } catch(err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
 
-
-
-router.get('/:id', (req, res) => {
+router.put('/:id', (req, res) => {
   
-})
-
-router.update('/:id', (req, res) => {
-
 })
 
 router.delete('/:id', (req, res) => {

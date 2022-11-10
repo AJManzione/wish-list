@@ -3,7 +3,7 @@ const createNewRegistry = async function (event) {
   
     const regName = document.querySelector("#reg-name");
     const selectedDate = document.querySelector("#datepicker");
-  
+
     if (!regName && !selectedDate) {
       alert("Please enter the fields to create a registry");
       return;
@@ -13,7 +13,6 @@ const createNewRegistry = async function (event) {
       body: JSON.stringify({
         name: regName.value,
         date: selectedDate.value,
-        username:
       }),
       headers: { "Content-Type": "application/json" },
     });
