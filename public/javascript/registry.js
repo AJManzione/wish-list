@@ -13,6 +13,7 @@ const createNewRegistry = async function (event) {
     body: JSON.stringify({
       name: regName.value,
       date: selectedDate.value,
+      description: document.getElementById("desc").value,
     }),
     headers: { "Content-Type": "application/json" },
   });

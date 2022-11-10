@@ -12,12 +12,11 @@ router.post("/", async (req, res) => {
   try {
     /* User exists, create the registry */
 
-    const formatDate = new Date(req.body.date);
+    req.body.date = new Date(req.body.date);
 
     console.log("Creating registry " + req.body.name);
     const registryData = await Registry.create({
-      name: req.body.name,
-      date: formatDate,
+      ...req.body,
       user_id: req.session.userId,
     });
     if (registryData) {
