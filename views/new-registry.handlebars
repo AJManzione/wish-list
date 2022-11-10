@@ -1,8 +1,18 @@
-<h2 class="text-center">{{registry.name}}</h2>
-<products-container class="d-flex flex-column">
+<products-container class="d-flex flex-column align-items-center">
+    <h2 class="text-center">{{registry.name}}</h2>
+    <p class="text-center">{{registry.description}}</p>
+</products-container>
+{{#if hasProducts}}
+<products-container class="d-flex flex-column align-items-center">
     {{#each registry.products as |product|}}
     {{> product}}
     {{/each}}
 </products-container>
-<button class="btn-primary">Add Product</button>
-<button class="btn-primary">Delete Registry</button>
+<h3 class="text-center">Total: ${{totalCost}}</h3>
+{{else}}
+<p class="text-center">This registry is empty</p>
+{{/if}}
+<buttons-container class="d-flex flex-column align-items-center">
+    <button class="btn-primary w-25 mt-3 rounded">Add Product</button>
+    <button class="btn-primary w-25 mt-3 rounded">Delete Registry</button>
+</buttons-container>
