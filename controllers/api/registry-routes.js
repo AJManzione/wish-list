@@ -2,6 +2,10 @@ const { Registry, User } = require("../../models");
 
 const router = require("express").Router();
 
+// we need a place to add items to a registry, where products can be added but the registry wont be created until a button on this page is pressed, something like "save changes" or "save registry" then that button will link to a post route and create that registry and then redirect the user to registry/:id - Anthony
+
+// not working currently, trying to render the dashboard handlebars
+
 router.post('/', async (req, res) => {
   console.log("Request to create a new registry received");
   try {
