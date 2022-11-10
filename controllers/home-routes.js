@@ -58,8 +58,29 @@ router.get("/registry", (req, res) => {
 });
 module.exports = router;
 
-router.get("/registry/:id", (req, res) => {
+router.get("/registry/:id", async (req, res) => {
+  let registry = await Registry.findByPk(req.params.id, {
+    include: [
+      {
+        model: Product,
+        include: [
+          {
+            model: Category,
+          },
+        ],
+      },
+    ],
+  });
+
+  console.log(registry.dataValues);
+
+  if (!registry) {
+    res.status(404).json({ message: "Thay registry doesnt exist" });
+  }
+
   res.render("new-registry", {
+    registry: registry.get({ plain: true }),
+    isOwned: registry.userId == req.session.userId,
     loggedIn: req.session.loggedIn,
   });
 });
