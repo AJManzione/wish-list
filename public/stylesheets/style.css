@@ -59,14 +59,24 @@ a {
   
 #login-btn:hover {
     color: white;
-    width:;
     box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
     background-color: rgba(104, 85, 224, 1);
   }
 
 #signup-btn:hover {
     color: white;
-    width:;
     box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
     background-color: rgba(104, 85, 224, 1);
+}
+
+@media screen and (max-width: 992px) {
+    .logo {
+      display: none;
+      position: absolute;
+    }
+
+    .navbar-nav {
+        margin-right: 50%;
+        transform: translate(50%, 0);
+    }
   }

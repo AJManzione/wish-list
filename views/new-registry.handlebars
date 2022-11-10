@@ -1,0 +1,8 @@
+<h2 class="text-center">{{registry.name}}</h2>
+<products-container class="d-flex flex-column">
+    {{#each registry.products as |product|}}
+    {{> product}}
+    {{/each}}
+</products-container>
+<button class="btn-primary">Add Product</button>
+<button class="btn-primary">Delete Registry</button>
