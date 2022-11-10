@@ -75,7 +75,7 @@ router.post("/login", async (req, res) => {
     });
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    res.status(500).json({ success: false, message: "A server error occurred"});
   }
 });
 

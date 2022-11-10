@@ -2,26 +2,26 @@
 <div class="container mt-5">
     <div class="row d-flex, justify-content-center">
         <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Login</h3>
+            <div class="card border-0 transparent-background">
+                <div class="card-header border-0 transparent-background">
+                    <h3 class="text-center header-text">Login</h3>
                 </div>
                 <div class="card-body">
                     <form class="login-form">
-                        <label for="username-login">Username</label>
+                        <label for="username-login" class="label">Username</label>
                         <br>
-                        <input type="text" class="w-100 entry-field" id="username-login" />
+                        <input type="text" class="w-100 entry-field rounded text-input" id="username-login" />
                         <br>
                         <br>
-                        <label for="password-login">Password</label>
-                        <input type="password" class="w-100 entry-field" id="password-login" />
+                        <label for="password-login" class="label">Password</label>
+                        <input type="password" class="w-100 entry-field rounded text-input" id="password-login" />
                         <br>
                         <br>
                     </form>
                 </div>
-                <div class="card-footer d-flex justify-content-center">
+                <div class="card-footer d-flex justify-content-center border-0 transparent-background">
                     <br>
-                    <button type="submit" class="w-25 btn btn-primary" id="login-btn">
+                    <button type="submit" class="w-25 btn" id="login-btn">
                         Log in
                     </button>
                     <br>
@@ -34,11 +34,11 @@
 {{!-- Sign up instead button --}}
 
 
-<div class="container mt-5">
+<div class="container mt-3">
     <div class="row d-flex justify-content-center">
         <div class="col-sm-6 d-flex justify-content-center">
             <a type="button" data-toggle="modal" data-target="#signupModal">
-                Sign Up Instead
+                <button class="btn">Sign Up Instead</button>
             </a>
         </div>
     </div>
@@ -86,5 +86,5 @@
         </div>
     </div>
 </div>
-<script src="/login.js"></script>
-<script src="/signup.js"></script>
+<script src="/js/login.js"></script>
+<script src="/js/signup.js"></script>
