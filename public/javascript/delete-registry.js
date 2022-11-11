@@ -22,3 +22,9 @@ async function deleteFormHandler(event) {
 }
 
 document.querySelector('#delete-btn').addEventListener('click', deleteFormHandler);
+
+document.querySelector('#edit-btn').addEventListener('click', function(event){
+  event.preventDefault()
+  const id = parseInt(document.querySelector("#registryID").innerText);
+  window.location.replace(`/dashboard/edit/${id}`)
+})

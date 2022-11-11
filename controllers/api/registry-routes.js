@@ -30,7 +30,26 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", (req, res) => {});
+router.put("/:id", (req, res) => {
+  Registry.update({
+    title: req.body.title,
+    content: req.body.content
+}, {
+    where: {
+        id: req.params.id
+    }
+}).then(dbRegistryData => {
+    if (!dbRegistryData) {
+        res.status(404).json({ message: 'No registry found with this id' });
+        return;
+    }
+    res.json(dbRegistryData);
+})
+.catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+});
+});
 
 router.delete("/:id", (req, res) => {
   console.log(req.body, req.params.id)
