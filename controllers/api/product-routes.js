@@ -44,12 +44,13 @@ router.put("/:id", async (req, res) => {
     }
     /* all ok, update the product. */
     /* id in the req.body should be the same as req.params.id */
-    const productData = await Product.update({
-      ...req.body,
-      where: {
-        id: req.params.id,
-      },
-    });
+    const productData = await Product.update({... req.body}, 
+      {
+        where: {
+          id: req.params.id
+        }
+      });
+
     if (productData) {
       res.status(200).json("Product updated successfully");
     } else {
