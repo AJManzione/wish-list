@@ -2,10 +2,45 @@
 
 <div class="container">
   <div class="row d-flex justify-content-center">
-    <h2 class="header-text text-center text-shadow">User Registries</h2>
+    <h1 class="header-text text-center text-shadow">Make Any Wish List You Want!</h1>
     <hr class="w-100">
   </div>
 </div>
+
+
+
+<div class="container">
+  <div class="row d-flex justify-content-around">
+    <ul id="home-display">
+      <li>
+        <img src="/images/baby-shower.jpeg" alt="">
+        <img src="/images/birthday.jpeg" alt="">
+        <img src="/images/wedding.jpeg" alt="">
+      </li>
+    </ul>
+  </div>
+</div>
+
+<br> <br> <br> <br> <br>
+
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <h2>User Registries</h2>
+    <hr class="w-100">
+  </div>
+</div>
+
+<br> <br> <br> 
+
+
+
+
+
+
+
+
+
+
 
 
 {{#each registries as |registry| }}
@@ -14,13 +49,15 @@
     <div class="col-md-6">
       <div class="card">
         <div class="card-header text-center">
-          <a href="/registry/{{registry.id}}">{{registry.name}}</a>
+          <h5>
+            <a href="/registry/{{registry.id}}">{{registry.name}}</a>
+          </h5>
         </div>
         <div class="card-body text-center">
           {{registry.description}}
         </div>
         <div class="card-footer text-center">
-          {{!--{{getDate registry.date}} --}}
+          {{registry.date}}
         </div>
       </div>
     </div>
