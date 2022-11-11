@@ -3,17 +3,59 @@
     margin: 0%;
     padding: 0%;
     list-style: none;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+@font-face {
+    src: url(./fonts/ScryptaPersonalUseBoldItalic-X3eoP.ttf);
+    font-family: Scrypta;
+}
+@font-face {
+    src: url(./fonts/Bernerbasisschrift2-L5Bg.ttf);
+    font-family: Berner Basisschrift;
+}
+
+.custom-welcome h1 {
+    font-size: 90px;
+    font-family: Scrypta;
+}
+
+.custom-welcome h2 {
+    font-size: 50px;
+    font-family: Scrypta;
+}
+
 
 body {
     background-image: url('/images/white-paper-texture-1.jpeg');
     background-size: cover;
 }
 
-a {
-    font-weight: 300;
+.card-header a{
+    font-size: 40px;
+    font-weight: 900;
     color: black;
+    font-family: Berner Basisschrift;
+}
+
+.card-header, h2 {
+    font-size: 40px;
+    font-family: Scrypta;
+}
+.modal-header {
+    font-size: 40px;
+    font-family: Scrypta;
+}
+
+.card-body p{
+    font-size: 20px;
+    font-weight: 900;
+    color: black;
+    font-family: Berner Basisschrift;
+}
+
+.card-footer {
+    font-weight: 900;
 }
 
 header {
@@ -57,11 +99,9 @@ header {
     transition: .5s;
 }
 
-
 .card-header, .card-footer {
     background-color: rgb(161, 200, 232);
 }
-
 
 
 #home-display img {
@@ -69,7 +109,9 @@ header {
     width:  300px;
     height: 300px;
     object-fit: cover;
+    box-shadow: 10px 10px, black;
 }
+
 /*
 #login-btn, #signup-btn {
     cursor: pointer;
