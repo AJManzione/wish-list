@@ -32,6 +32,23 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", (req, res) => {});
 
-router.delete("/:id", (req, res) => {});
+router.delete("/:id", (req, res) => {
+  console.log(req.body, req.params.id)
+  Registry.destroy({
+    where: {
+        id: req.params.id
+    }
+}).then(dbRegistryData => {
+    if (!dbRegistryData) {
+        res.status(404).json({ message: 'No registry found with this id' });
+        return;
+    }
+    res.json(dbRegistryData);
+    console.log("registry deleted");
+}).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+});
+});
 
 module.exports = router;

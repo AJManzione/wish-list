@@ -5,6 +5,7 @@
         <div class="col-lg-9">
             <div class="card d-flex justify-content-center">
                 <div class="card-header">
+                    <div id="registryID" style="display:none">{{registry.id}}</div>
                     <h2 class="text-center">{{registry.name}}</h2>
                 </div>
                 <div class="card-body">
@@ -14,11 +15,8 @@
                             <a type="button" data-toggle="modal" data-target="#add-product">
                                 <button class="pl-5 pr-5 btn-primary mt-3 rounded">Add Product</button>
                             </a>
-                            <button class="pl-5 pr-5 btn-primary mt-3 rounded">Edit Registry</button>
-                            <a type="button" data-toggle="modal" data-target="#delete-registry">
-                                <button class="pl-5 pr-5 btn-primary mt-3 rounded">Delete Registry</button>
-                            </a>
-                            
+                            <button class="btn-primary w-25 mt-3 rounded">Edit Registry</button>
+                            <button class="btn-primary w-25 mt-3 rounded" id="delete-btn">Delete Registry</button>
                         </li>
                         <li>
                             {{#if hasProducts}}
@@ -120,6 +118,7 @@
 
 <script src="/javascript/add-product"></script>
 
+<script src="/javascript/delete.js"></script>
 {{!-- <label for="cars">Choose a car:</label>
 
 <select name="cars" id="cars">
