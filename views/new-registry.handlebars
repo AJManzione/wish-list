@@ -11,7 +11,9 @@
                 <div class="card-body">
                     <ul>
                         <li class="text-center">
-                            <button class="btn-primary w-25 mt-3 rounded">Add Product</button>
+                            <a type="button" data-toggle="modal" data-target="#add-product">
+                                <button class=" pl-5 pr-5 btn-primary mt-3 rounded">Add Product</button>
+                            </a>
                             <button class="btn-primary w-25 mt-3 rounded">Edit Registry</button>
                             <button class="btn-primary w-25 mt-3 rounded">Delete Registry</button>
                         </li>
@@ -35,7 +37,70 @@
 </div>
 
 
-{{!-- its okay will, I got you ;) -Anthony  --}}
+{{!-- Sign up Modal --}} {{!-- Pops up after button is pressed --}}
+
+<div class="modal fade" id="add-product" tabindex="-1" role="dialog" aria-labelledby="add-product" aria-hidden="true">
+    <div class="modal-dialog shadow" role="document">
+        <div class="modal-content secondary-background border-0">
+            <div class="modal-header border-0">
+                <h3 class="modal-title header-text text-shadow">Add a Product</h3>
+                <button type="button" class="btn" data-dismiss="modal">
+                    X
+                </button>
+            </div>
+    <hr>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form class="signup-form">
+                                <label for="name">Product Name:</label>
+                                <input type="product-name" class="w-100 rounded text-input mb-2" id="product-name">
+                                <label for="price">Price:</label>
+                                <input type="product-price" class="w-100 rounded text-input" id="product-price" placeholder="$0.00">
+                                <br>
+                                <div class="mt-4 mb-2">
+                                    <label for="categories">Choose a Category:</label>
+                                    <select name="categories" id="categories">
+                                    <option value="Books">Books</option>
+                                    <option value="Toys">Toys</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Home Goods">Home Goods</option>
+                                    <option value="Appliances">Appliances</option>
+                                    <option value="Kitchen">Kitchen</option>
+                                    <option value="Apparel">Apparel</option>
+                                    <option value="Shoes">Shoes</option>
+                                    <option value="Jewlery">Jewlery</option>
+                                    <option value="Misc">Misc</option>
+                                    </select>
+                                </div>
+                                <label for="link">Link to Item:</label>
+                                <input type="product-link" class="w-100 rounded text-input" id="product-price" placeholder="https://amazon.com/products">
+                                
+                                <div class="modal-footer">
+                                    <button class="btn-primary w-100 mt-4 mb-2 btn btn-lg rounded-3 border-0" id="product-price">Add Product</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/javascript/add-product"></script>
+
+{{!-- <label for="cars">Choose a car:</label>
+
+<select name="cars" id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select> --}}
 
 
 
