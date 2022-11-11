@@ -31,11 +31,31 @@ body {
     background-size: cover;
 }
 
-.card a, p {
+.card-header a{
     font-size: 40px;
     font-weight: 900;
     color: black;
     font-family: Berner Basisschrift;
+}
+
+.card-header, h2 {
+    font-size: 40px;
+    font-family: Scrypta;
+}
+.modal-header {
+    font-size: 40px;
+    font-family: Scrypta;
+}
+
+.card-body p{
+    font-size: 20px;
+    font-weight: 900;
+    color: black;
+    font-family: Berner Basisschrift;
+}
+
+.card-footer {
+    font-weight: 900;
 }
 
 header {
