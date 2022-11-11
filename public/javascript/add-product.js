@@ -1,6 +1,9 @@
-const myModal = document.getElementById('add-product')
-const myInput = document.getElementById('add-product')
+function addProduct() {
+  console.log('hello');
+}
 
-myModal.addEventListener('click', () => {
-  myInput.focus()
-})
+
+document.getElementById("confirm-add-product")
+.addEventListener("click", addProduct)
+
+
