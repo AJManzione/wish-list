@@ -1,17 +1,27 @@
 /* add product */
-const addProductFormEl = document.querySelector("#addProduct");
+//const addProductFormEl = document.querySelector("add-product-form");
+const addProductBtnEl = document.querySelector("#add-product-btn");
 
 const addProductToRegistry = async (event) => {
   event.preventDefault();
+  console.log("******************In Add product handler*********************");
 
   /* get product details - name, url, price, category_id, registry_id */
-  const name = document.querySelector("#productName").value;
-  const link = document.querySelector("#productUrl").value;
-  const price = document.querySelector("#productPrice").value;
-  const category_id = document.querySelector("#productCategory").val(); // find the element within the dropdown
-  const registry_id = document.querySelector("#productRegistry").value; // is this the registry id or name ? 
+  
+  const name = document.querySelector("#product-name").value;
+  const link = document.querySelector("#product-url").value;
+  const price = document.querySelector("#product-price").value;
+  const category_id = document.querySelector("#categories").value; // find the element within the dropdown
+  const registry_id = document.querySelector("#data-registry-id").value; // is this the registry id or name ? 
+
+  console.log("name = " + name);
+  console.log("link = " + link);
+  console.log("price = " + price);
+  console.log("category_id = " + category_id);
+  console.log("registry_id = " + registry_id);
 
   /* send /api/product POST method to add product to registry */
+  
   const response = await fetch("/api/product", {
     method: 'POST',
     headers: { "Content-Type": "application/json" },
@@ -30,25 +40,25 @@ const addProductToRegistry = async (event) => {
   }
 
   document.location.replace("/registry/" + registry_id);
-
 }
-addProductFormEl.addEventListener('submit', addProductToRegistry);
 
 /* update product */
 const updateProductFormEl = document.querySelector("#updateProduct");
 
 const updateProductInRegistry = async () => {
   event.preventDefault();
+  console.log("******************In Update product handler*********************");
+
 
   /* get product details - product_id, name, url, price */
   /* category_id and registry_id */
 
-  const product_id = document.querySelector("#productId").value;
-  const name = document.querySelector("#productName").value;
-  const link = document.querySelector("#productUrl").value;
-  const price = document.querySelector("#productPrice").value;
-  const category_id = document.querySelector("#productCategory").val(); // find the element within the dropdown
-  const registry_id = document.querySelector("#productRegistry").value; // is this the registry id or name ? 
+  const product_id = document.querySelector("#product-id").value;
+  const name = document.querySelector("#product-name").value;
+  const link = document.querySelector("#product-url").value;
+  const price = document.querySelector("#product-price").value;
+  const category_id = document.querySelector("#categories").value; // find the element within the dropdown
+  const registry_id = document.querySelector("#data-registry-id").value; // is this the registry id or name ? 
 
   /* send /api/product/:id PUT method */
   const response = await fetch(`/api/product/${product_id}`, {
@@ -71,12 +81,11 @@ const updateProductInRegistry = async () => {
 
   document.location.replace("/registry/" + registry_id);
 }
-updateProductFormEl.addEventListener('submit', updateProductInRegistry);
 
 
-/* delete a product - mybe this is not a form at all */
-/* and we come here on Delete Registry button click */
-const deleteProductFormEl = document.querySelector("#deleteProduct");
+/* delete a product -  */
+/* we come here on Delete Product button click */
+const deleteProductBtnEl = document.querySelector("#deleteProduct");
 const deleteProductFromRegistry = async () => {
   event.preventDefault();
 
@@ -101,4 +110,8 @@ const deleteProductFromRegistry = async () => {
 
 
 }
-deleteProductFormEl.addEventListener('submit', deleteProductFromRegistry);
+addProductBtnEl.addEventListener('click', addProductToRegistry);
+//addProductFormEl.addEventListener('submit', addProductToRegistry);
+updateProductFormEl.addEventListener('submit', updateProductInRegistry);
+deleteProductBtnEl.addEventListener('click', deleteProductFromRegistry);
+

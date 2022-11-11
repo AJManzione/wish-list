@@ -54,7 +54,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form class="signup-form">
+                            <form class="signup-form" id="add-product-form">
                                 <label for="name">Product Name:</label>
                                 <input type="product-name" class="w-100 text-input mb-2" id="product-name">
                                 <label for="price">Price:</label>
@@ -76,16 +76,21 @@
                                     </select>
                                 </div>
                                 <label for="link">Link to Item:</label>
-                                <input type="product-link" class="w-100 text-input" id="product-price" placeholder="https://amazon.com/products">
+                                <input type="product-link" class="w-100 text-input" id="product-url" placeholder="https://amazon.com/products">
                                 
-                                <div class="modal-footer">
-                                    <button class="btn-primary w-100 mt-4 mb-2 btn-lg" id="product-price">Add Product</button>
-                                </div>
+                                <!-- <div class="modal-footer"> -->
+                                <button class="btn-primary w-100 mt-4 mb-2 btn-lg" id="add-product-btn" data-registry-id="{{$registry.id}}">Add Product</button>
+                                <!-- </div> -->
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+            <!--
+            <div class="modal-footer">
+                <button class="btn-primary w-100 mt-4 mb-2 btn-lg" id="add-product-btn" data-registry-id="{{$registry.id}}">Add Product</button>
+            </div>
+            -->
         </div>
     </div>
 </div>
@@ -116,8 +121,8 @@
 
 
 
-<script src="/javascript/add-product"></script>
-
+<!--<script src="/javascript/add-product.js"></script>-->
+<script src="/javascript/product.js"></script>
 <script src="/javascript/delete.js"></script>
 {{!-- <label for="cars">Choose a car:</label>
 
