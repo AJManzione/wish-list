@@ -7,13 +7,13 @@
                 <div class="card-header">
                     <div id="registryID" style="display:none">{{registry.id}}</div>
                     <h2 class="text-center">{{registry.name}}</h2>
-                    <p class="text-center">{{registry.description}}</p>
                 </div>
                 <div class="card-body">
+                    <p class="text-center">{{registry.description}}</p>
                     <ul>
                         <li class="text-center">
                             <a type="button" data-toggle="modal" data-target="#add-product">
-                                <button class=" pl-5 pr-5 btn-primary mt-3 rounded">Add Product</button>
+                                <button class="pl-5 pr-5 btn-primary mt-3 rounded">Add Product</button>
                             </a>
                             <button class="btn-primary w-25 mt-3 rounded">Edit Registry</button>
                             <button class="btn-primary w-25 mt-3 rounded" id="delete-btn">Delete Registry</button>
@@ -37,28 +37,28 @@
     </div>
 </div>
 
-
-{{!-- Sign up Modal --}} {{!-- Pops up after button is pressed --}}
+{{!-- ADD PRODUCT Modal --}}
 
 <div class="modal fade" id="add-product" tabindex="-1" role="dialog" aria-labelledby="add-product" aria-hidden="true">
     <div class="modal-dialog shadow" role="document">
-        <div class="modal-content secondary-background border-0">
-            <div class="modal-header border-0">
-                <h3 class="modal-title header-text text-shadow">Add a Product</h3>
-                <button type="button" class="btn" data-dismiss="modal">
-                    X
-                </button>
+        <div class="modal-content secondary-background">
+            <div class="modal-header d-flex justify-content-center">
+                <h2 class="modal-title header-text text-shadow">Add a Product</h2>
+                <div>
+                    <button type="button" class="btn" data-dismiss="modal">
+                        X
+                    </button>
+                </div> 
             </div>
-    <hr>
             <div class="modal-body">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
                             <form class="signup-form">
                                 <label for="name">Product Name:</label>
-                                <input type="product-name" class="w-100 rounded text-input mb-2" id="product-name">
+                                <input type="product-name" class="w-100 text-input mb-2" id="product-name">
                                 <label for="price">Price:</label>
-                                <input type="product-price" class="w-100 rounded text-input" id="product-price" placeholder="$0.00">
+                                <input type="product-price" class="w-100 text-input" id="product-price" placeholder="$0.00">
                                 <br>
                                 <div class="mt-4 mb-2">
                                     <label for="categories">Choose a Category:</label>
@@ -76,14 +76,38 @@
                                     </select>
                                 </div>
                                 <label for="link">Link to Item:</label>
-                                <input type="product-link" class="w-100 rounded text-input" id="product-price" placeholder="https://amazon.com/products">
+                                <input type="product-link" class="w-100 text-input" id="product-price" placeholder="https://amazon.com/products">
                                 
                                 <div class="modal-footer">
-                                    <button class="btn-primary w-100 mt-4 mb-2 btn btn-lg rounded-3 border-0" id="product-price">Add Product</button>
+                                    <button class="btn-primary w-100 mt-4 mb-2 btn-lg" id="product-price">Add Product</button>
                                 </div>
                             </form>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{!-- ARE YOU SURE YOU WANT TO DELETE MODAL --}}
+
+<div class="modal fade" id="delete-registry" tabindex="-1" role="dialog" aria-labelledby="delete-registry" aria-hidden="true">
+    <div class="modal-dialog shadow" role="document">
+        <div class="modal-content secondary-background">
+            <div class="modal-header d-flex justify-content-center">
+                <p class="modal-title header-text text-shadow">Are You Sure You Want To Delete This Registry?</p>
+                <div>
+                    <button type="button" class="btn" data-dismiss="modal">
+                        X
+                    </button>
+                </div> 
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+                <div class="flex-row">
+                    <button class="pl-5 pr-5 btn-danger flex-item btn-lg">Yes</button>
+                    <button class="pl-5 pr-5 btn-primary flex-item btn-lg">No</button>
                 </div>
             </div>
         </div>
