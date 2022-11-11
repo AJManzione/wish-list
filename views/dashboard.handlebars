@@ -1,21 +1,52 @@
-<section class="container-fluid">
-    <h2 class="header-text text-center text-shadow">Your Registries</h2>
-    <hr class="hr">
-    <ul>
-        {{#each registries as |registry| }}
-        <li class="card">
-            <a href="/registry/{{registry.id}}">{{registry.name}}</a>
-            <p>
-                {{registry.user_id}}
-            </p>
-        </li>
-        {{/each}}
-    </ul>
-    <div class="container mt-4">
-        <div class="row d-flex justify-content-center">
-            <button id="create-registry" class="create-registry btn">Create New Registry +</button>
-        </div>
+
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <h2 class="header-text text-center text-shadow">Your Registries</h2>
+        <hr class="w-100">
     </div>
+</div>
+
+
+
+
+<div class="container mt-4">
+    <div class="row d-flex justify-content-center">
+        <button id="create-registry" class="create-registry btn">Create New Registry +</button>
+    </div>
+</div>
+
+<br>
+
+
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <ul>
+            {{#each registries as |registry| }}
+            <li>
+                <div class="card">
+                    <div class="card-header">
+                        <a href="/registry/{{registry.id}}">{{registry.name}}</a>
+                    </div>
+                    <div class="card-body">
+                        {{registry.description}}
+                    </div>
+                    <div class="card-footer">
+                        {{registry.date}}
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+                
+
+        
+
+
 
     <script src="/javascript/dashboard.js"></script>
 
