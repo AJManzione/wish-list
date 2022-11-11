@@ -81,6 +81,8 @@ router.get("/registry/:id", async (req, res) => {
     totalCost += parseFloat(registry.dataValues.products[i].price);
   }
 
+  console.log(registry);
+
   res.render("new-registry", {
     registry: registry.get({ plain: true }),
     totalCost,
