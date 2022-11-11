@@ -74,14 +74,13 @@ router.get("/registry/:id", async (req, res) => {
 
   if (!registry) {
     res.status(404).json({ message: "Thay registry doesnt exist" });
+    return;
   }
 
   let totalCost = 0;
   for (let i = 0; i < registry.dataValues.products.length; i++) {
     totalCost += parseFloat(registry.dataValues.products[i].price);
   }
-
-  console.log(registry);
 
   res.render("new-registry", {
     registry: registry.get({ plain: true }),
