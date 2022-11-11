@@ -3,8 +3,24 @@
     margin: 0%;
     padding: 0%;
     list-style: none;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+@font-face {
+    src: url(./fonts/ScryptaPersonalUseBoldItalic-X3eoP.ttf);
+    font-family: Scrypta;
+}
+
+.custom-welcome h1 {
+    font-size: 90px;
+    font-family: Scrypta;
+}
+
+.custom-welcome h2 {
+    font-size: 50px;
+    font-family: Scrypta;
+}
+
 
 body {
     background-image: url('/images/white-paper-texture-1.jpeg');
@@ -63,12 +79,12 @@ header {
 }
 
 
-
 #home-display img {
     padding: 30px;
     width:  300px;
     height: 300px;
     object-fit: cover;
+    box-shadow: 10px 10px, black;
 }
 /*
 #login-btn, #signup-btn {
