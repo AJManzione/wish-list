@@ -111,6 +111,10 @@ header {
     box-shadow: 10px 10px, black;
 }
 
+.price {
+    color: green;
+}
+
 /*
 #login-btn, #signup-btn {
     cursor: pointer;
