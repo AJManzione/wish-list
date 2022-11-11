@@ -48,23 +48,22 @@
                     X
                 </button>
             </div>
-
+    <hr>
             <div class="modal-body">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
                             <form class="signup-form">
-                                <p class="label">Product Name</p>
-                                <input type="product-name" class="w-100 rounded text-input" id="product-name">
-                                <label for="product-name"></label>
-
-                                <p class="label">Product Price</p>
-                                <input type="product-price" class="w-100 rounded text-input" id="product-price">
-
+                                <label for="name">Product Name:</label>
+                                <input type="product-name" class="w-100 rounded text-input mb-2" id="product-name">
+                                <label for="price">Price:</label>
+                                <input type="product-price" class="w-100 rounded text-input" id="product-price" placeholder="$0.00">
+                                <br>
                                 <div class="mt-4 mb-2">
                                     <label for="categories">Choose a Category:</label>
                                     <select name="categories" id="categories">
                                     <option value="Books">Books</option>
+                                    <option value="Toys">Toys</option>
                                     <option value="Electronics">Electronics</option>
                                     <option value="Home Goods">Home Goods</option>
                                     <option value="Appliances">Appliances</option>
@@ -72,11 +71,15 @@
                                     <option value="Apparel">Apparel</option>
                                     <option value="Shoes">Shoes</option>
                                     <option value="Jewlery">Jewlery</option>
-                                    <option value="Pet">Pet</option>
                                     <option value="Misc">Misc</option>
                                     </select>
                                 </div>
-                                <button class="btn-primary w-100 mt-4 mb-2 btn btn-lg rounded-3 border-0" id="product-price">Add Product</button>
+                                <label for="link">Link to Item:</label>
+                                <input type="product-link" class="w-100 rounded text-input" id="product-price" placeholder="https://amazon.com/products">
+                                
+                                <div class="modal-footer">
+                                    <button class="btn-primary w-100 mt-4 mb-2 btn btn-lg rounded-3 border-0" id="product-price">Add Product</button>
+                                </div>
                             </form>
                         </div>
                     </div>

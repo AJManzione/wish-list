@@ -3,6 +3,9 @@
     "name" : "Books"
   },
   {
+    "name" : "Toys"
+  },
+  {
     "name" : "Electronics"
   },
   {
@@ -22,9 +25,6 @@
   },
   {
     "name" : "Jewlery"
-  },
-  {
-    "name" : "Pet"
   },
   {
     "name" : "Jewlery"
