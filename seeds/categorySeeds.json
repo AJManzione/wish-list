@@ -3,27 +3,33 @@
     "name" : "Books"
   },
   {
-    "name" : "Laptops"
+    "name" : "Electronics"
   },
   {
-    "name" : "Kitchen Appliances"
+    "name" : "Home Goods"
   },
   {
-    "name" : "Vaccuums"
+    "name" : "Appliances"
   },
   {
-    "name" : "Phones"
+    "name" : "Kitchen"
   },
   {
-    "name" : "Subscriptions"
-  },
-  {
-    "name" : "Movie Tickets"
+    "name" : "Apparel"
   },
   {
     "name" : "Shoes"
   },
   {
-    "name" : "Travel"
+    "name" : "Jewlery"
+  },
+  {
+    "name" : "Pet"
+  },
+  {
+    "name" : "Jewlery"
+  },
+  {
+    "name" : "Misc"
   }
 ]
