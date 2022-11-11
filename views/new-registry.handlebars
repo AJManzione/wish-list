@@ -16,7 +16,10 @@
                                 <button class="pl-5 pr-5 btn-primary mt-3 rounded">Add Product</button>
                             </a>
                             <button class="btn-primary w-25 mt-3 rounded">Edit Registry</button>
-                            <button class="btn-primary w-25 mt-3 rounded" id="delete-btn">Delete Registry</button>
+                            <a type="button" data-toggle="modal" data-target="#delete-registry">
+                                <button class="pl-5 pr-5 btn-primary mt-3 rounded">Delete Registry</button>
+                            </a>
+
                         </li>
                         <li>
                             {{#if hasProducts}}
@@ -111,8 +114,8 @@
             </div>
             <div class="modal-body d-flex justify-content-center">
                 <div class="flex-row">
-                    <button class="pl-5 pr-5 btn-danger flex-item btn-lg">Yes</button>
-                    <button class="pl-5 pr-5 btn-primary flex-item btn-lg">No</button>
+                    <button id="delete-btn"class="pl-5 pr-5 btn-danger flex-item btn-lg">Yes</button>
+                    <button id="dont-delete"class="pl-5 pr-5 btn-primary flex-item btn-lg">No</button>
                 </div>
             </div>
         </div>
@@ -124,14 +127,7 @@
 <!--<script src="/javascript/add-product.js"></script>-->
 <script src="/javascript/product.js"></script>
 <script src="/javascript/delete.js"></script>
-{{!-- <label for="cars">Choose a car:</label>
 
-<select name="cars" id="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select> --}}
 
 
 
