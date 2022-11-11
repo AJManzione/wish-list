@@ -34,14 +34,18 @@
 <div class="container custom-welcome">
   <div class="row d-flex justify-content-center">
     <h2>User Registries</h2>
-    <hr class="w-100">
   </div>
 </div>
 
+<br>
+
+<div class="row d-flex justify-content-center">
+  <hr class="w-75">
+</div> 
+
 <br> <br> <br> 
 
-
-<div class="container custom-reg-all w-50">
+<div class="container">
     <ul>
         {{#each registries as |registry| }}
         <li class="flex-row p-5">
@@ -53,12 +57,12 @@
                 </div>
                 <div class="card-body text-center">
                     <br>
-                    {{registry.description}}
+                    <p>{{registry.description}}</p>
                     <br>
                 </div>
                 <div class="card-footer text-center">
                     <br>
-                    {{registry.date}}
+                    <p>{{registry.date}}</p>
                     <br>
                 </div>
             </div>

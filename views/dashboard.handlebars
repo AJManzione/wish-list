@@ -22,7 +22,7 @@
 
 
 
-<div class="container custom-reg-all">
+<div class="container">
     <ul>
         {{#each registries as |registry| }}
         <li class="flex-row p-5">
@@ -34,12 +34,12 @@
                 </div>
                 <div class="card-body text-center">
                     <br>
-                    {{registry.description}}
+                    <p>{{registry.description}}</p>
                     <br>
                 </div>
                 <div class="card-footer text-center">
                     <br>
-                    {{registry.date}}
+                    <p>{{registry.date}}</p>
                     <br>
                 </div>
             </div>
