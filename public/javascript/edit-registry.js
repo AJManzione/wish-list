@@ -5,12 +5,9 @@
 
 async function editFormHandler(event) {
     event.preventDefault();
-    const name = document.querySelector('#reg-name"]').value;
+    const name = document.querySelector('#reg-name').value;
     const description = document.querySelector('#desc').value;
     const date = document.querySelector('#datepicker').value;
-    console.log(title);
-    console.log(content);
-    console.log(datepicker);
 
     const id = parseInt(document.querySelector("#registryID").innerText);
     console.log(id)
@@ -18,9 +15,10 @@ async function editFormHandler(event) {
     const response = await fetch(`/api/registry/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
+          name: name.value,
+          description: description.value,
           registry_id: id,
-          desription,
-          date,
+          date: date.value
         }),
         headers: {
           'Content-Type': 'application/json'
@@ -28,11 +26,11 @@ async function editFormHandler(event) {
       });
       
       if (response.ok) {
-        document.location.replace('/registry/:id');
+        document.location.replace(`/registry/${id}`);
       } else {
         alert(response.statusText);
       }
 
 }
 
-document.querySelector('#edit-registry-btn').addEventListener('submit', editFormHandler);
+document.getElementById('edit-registry-btn').addEventListener('click', editFormHandler);
