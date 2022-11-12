@@ -11,6 +11,7 @@ router.get("/", async (req, res) => {
     const registries = registryData.map((registry) =>
       registry.get({ plain: true })
     );
+
     if (registries) {
       /* render homepage with list */
       res.render("homepage", { registries, loggedIn: req.session.loggedIn });

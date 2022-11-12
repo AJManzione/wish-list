@@ -1,15 +1,14 @@
-
 <div class="container custom-welcome">
   <div class="row d-flex justify-content-center custom-welcome">
     <h1 class="header-text text-center text-shadow">Create A Wish List</h1>
-  </div> 
+  </div>
 </div>
 
 <br>
 
 <div class="row d-flex justify-content-center">
   <hr class="w-75">
-</div>   
+</div>
 
 
 
@@ -29,14 +28,15 @@
         <a href="/dashboard"><img src="/images/holidays.png" alt=""></a>
       </div>
     </ul>
-  {{!-- </div> --}}
+    {{!--
+  </div> --}}
 </div>
 
 <div class="row d-flex justify-content-center">
   <hr class="w-75">
-</div> 
+</div>
 
-<br> 
+<br>
 
 <div class="container custom-welcome">
   <div class="row d-flex justify-content-center">
@@ -48,32 +48,33 @@
 
 <div class="row d-flex justify-content-center">
   <hr class="w-75">
-</div> 
+</div>
 
-<br> <br> <br> 
+<br> <br> <br>
 
 <div class="container">
-    <ul>
-        {{#each registries as |registry| }}
-        <li class="flex-row p-5">
-            <div class="card shadow">
-                <div class="card-header text-center">
-                    <h4>
-                        <a href="/registry/{{registry.id}}">{{registry.name}}</a>
-                    </h4>
-                </div>
-                <div class="card-body text-center">
-                    <br>
-                    <p>{{registry.description}}</p>
-                    <br>
-                </div>
-                <div class="card-footer text-center">
-                    <br>
-                    <p>{{ getDate registry.date}}</p>
-                    <br>
-                </div>
-            </div>
-        </li>
-        {{/each}}
-    </ul>
+  <ul>
+    {{#each registries as |registry| }}
+    <li class="flex-row p-5">
+      <div class="card shadow">
+        <div class="card-header text-center">
+          <h4>
+            <a href="/registry/{{registry.id}}">{{registry.name}}</a>
+          </h4>
+          <h5>By: {{registry.user.username}}</h5>
+        </div>
+        <div class="card-body text-center">
+          <br>
+          <p>{{registry.description}}</p>
+          <br>
+        </div>
+        <div class="card-footer text-center">
+          <br>
+          <p>{{ getDate registry.date}}</p>
+          <br>
+        </div>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
 </div>
