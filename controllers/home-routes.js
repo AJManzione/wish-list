@@ -95,14 +95,13 @@ router.get("/dashboard/edit/:id", async (req, res) => {
   if (!req.session.loggedIn) {
     res.render("login");
   } else {
-    console.log(req.params)
+    console.log(req.params);
     const registryData = await Registry.findByPk(req.params.id);
-    const registry = registryData.get({ plain: true })
-  
+    const registry = registryData.get({ plain: true });
+
     res.render("edit-registry", {
       registry: registry,
       loggedIn: req.session.loggedIn,
     });
   }
 });
-
