@@ -32,8 +32,9 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", (req, res) => {
   Registry.update({
-    title: req.body.title,
-    content: req.body.content
+    name: req.body.name,
+    decription: req.body.decription,
+    date: req.body.date,
 }, {
     where: {
         id: req.params.id

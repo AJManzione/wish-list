@@ -98,7 +98,7 @@ router.get("/dashboard/edit/:id", async (req, res) => {
     console.log(req.params)
     const registryData = await Registry.findByPk(req.params.id);
     const registry = registryData.get({ plain: true })
-
+  
     res.render("edit-registry", {
       registry: registry,
       loggedIn: req.session.loggedIn,
