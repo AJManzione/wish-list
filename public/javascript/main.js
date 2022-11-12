@@ -1,4 +1,21 @@
 const logout = document.getElementById("logout-link");
+
+var granimInstance = new Granim({
+  element: '#canvas-basic',
+  direction: 'left-right',
+  //opacity: [1,1],
+  isPausedWhenNotInView: true,
+  states : {
+      "default-state": {
+          gradients: [
+              ['#ff9966', '#ff5e62'],
+              ['#00F260', '#0575E6'],
+              ['#e1eec3', '#f05053']
+          ]
+      }
+  }
+});
+
 if (logout) {
   logout.addEventListener("click", async (event) => {
     await fetch("/api/user/logout");
