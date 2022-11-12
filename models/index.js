@@ -31,4 +31,14 @@ Registry.hasMany(Product, {
   onDelete: "cascade",
 });
 
+User.hasMany(Product, {
+  foreignKey: "user_id",
+  onDelete: "cascade",
+});
+
+Product.belongsTo(User, {
+  foreignKey: "user_id",
+  onDelete: "cascade",
+});
+
 module.exports = { User, Registry, Product, Category };

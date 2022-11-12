@@ -8,13 +8,9 @@ const router = require("express").Router();
 // not working currently, trying to render the dashboard handlebars
 
 router.post("/", async (req, res) => {
-  console.log("Request to create a new registry received");
   try {
     /* User exists, create the registry */
 
-    req.body.date = new Date(req.body.date);
-
-    console.log("Creating registry " + req.body.name);
     const registryData = await Registry.create({
       ...req.body,
       user_id: req.session.userId,
@@ -31,44 +27,52 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  Registry.update({
-    name: req.body.name,
-    decription: req.body.decription,
-    date: req.body.date,
-}, {
+  if (!req.session.loggedIn) {
+    return;
+  }
+
+  Registry.update(req.body, {
     where: {
-        id: req.params.id
-    }
-}).then(dbRegistryData => {
-    if (!dbRegistryData) {
-        res.status(404).json({ message: 'No registry found with this id' });
+      user_id: req.session.userId,
+      id: req.params.id,
+    },
+  })
+    .then((dbRegistryData) => {
+      if (!dbRegistryData) {
+        res.status(404).json({ message: "No registry found with this id" });
         return;
-    }
-    res.json(dbRegistryData);
-})
-.catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-});
+      }
+      res.json(dbRegistryData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 router.delete("/:id", (req, res) => {
-  console.log(req.body, req.params.id)
+  if (!req.session.loggedIn) {
+    return;
+  }
+
   Registry.destroy({
     where: {
-        id: req.params.id
-    }
-}).then(dbRegistryData => {
-    if (!dbRegistryData) {
-        res.status(404).json({ message: 'No registry found with this id' });
+      user_id: req.session.userId,
+      id: req.params.id,
+    },
+  })
+    .then((dbRegistryData) => {
+      if (!dbRegistryData) {
+        res.status(404).json({ message: "No registry found with this id" });
         return;
-    }
-    res.json(dbRegistryData);
-    console.log("registry deleted");
-}).catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-});
+      }
+      res.json(dbRegistryData);
+      console.log("registry deleted");
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;

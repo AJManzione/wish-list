@@ -8,6 +8,7 @@ const createNewRegistry = async function (event) {
     alert("Please enter the fields to create a registry");
     return;
   }
+
   const response = await fetch("/api/registry", {
     method: "POST",
     body: JSON.stringify({
