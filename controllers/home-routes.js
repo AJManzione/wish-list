@@ -74,7 +74,7 @@ router.get("/registry/:id", async (req, res) => {
   });
 
   if (!registry) {
-    res.status(404).json({ message: "Thay registry doesnt exist" });
+    res.status(404).json({ message: "The registry doesnt exist" });
     return;
   }
 

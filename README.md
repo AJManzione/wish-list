@@ -13,10 +13,9 @@
 * [Author Links](#author-links)
 
 ## Description
-This is a full stack application that implements a wish list for events.
+This is a full stack application that implements a wish list or a gift registry for an event. Through an easy to use interface, a user can register with the app, create any number of registries. The user can manage the registries they own by adding, updating or removing products. The registries are also visible to any visitor to the page or a guest to an event to look up items to fulfill.
 
-
-The deployed app is at: 
+The deployed app is at: https://wish-list-maker.herokuapp.com/
 The github repo is: https://github.com/AJManzione/wish-list
 
 ## Wireframe
@@ -41,9 +40,9 @@ The github repo is: https://github.com/AJManzione/wish-list
 
 
 ## Installation
-The application has been deployed to [Heroku](<add link>).  
+The application has been deployed to [Heroku](https://wish-list-maker.herokuapp.com/).  
 
-The server can also be started from the command line and used with a browser client (homepage at http://localhost:3001/).
+The application can also be used for test purposes by starting the server from the command line along with a browser client (homepage at http://localhost:3001/).
 
 1. Set up the environment variables in the .env file (the DB_PASSWORD variable should be set to the user's SQL password)
 ```
@@ -86,20 +85,25 @@ Start the application from the command line with the following command in the pr
 ```
 $ node server.js
 ```
+From the browser navigate to http://localhost:3001 to use the frontend website.
 
 ## Technologies
+- HTML / CSS
+- Bootstrap
 - Javascript
 - express.js framework
 - Sequelize 
-- Handlebars
+- Handlebars.js
 - Express-session
 - bcrypt
+- Granim.js library
 
 ## References
 - [Sequelize](https://sequelize.org/docs/v6/core-concepts/model-basics/)
 - [Handlebars.js](https://handlebarsjs.com/)
 - [Express Session](https://www.npmjs.com/package/express-session)
 - [bcrypt.js](https://www.npmjs.com/package/bcrypt)
+- [Granim.js](https://sarcadass.github.io/granim.js/index.html)
 
 ## License
 This application is covered under the [MIT License](https://opensource.org/licenses/MIT).
