@@ -20,9 +20,9 @@ addProductBtnEl.addEventListener("click", async (event) => {
     }),
   });
 
-  let responseData = await response.json();
   if (!response.ok) {
-    alert(responseData.message);
+    alert((await response.json()).message);
+    return;
   }
 
   document.location.replace("/registry/" + registry_id);

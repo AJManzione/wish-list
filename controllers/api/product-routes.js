@@ -23,8 +23,23 @@ router.post("/", async (req, res) => {
       res.status(404).json("Product not created");
     }
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+    let error = "Error creating product";
+    if (err.parent) {
+      if (err.parent.errno) {
+        switch (err.parent.errno) {
+          case 1366:
+            error = "Please enter a valid price";
+            break;
+
+          default:
+            console.log(err);
+            break;
+        }
+      }
+    } else {
+      error = err.errors[0].message;
+    }
+    res.status(500).json({ success: false, message: error });
   }
 });
 router.put("/:id", async (req, res) => {
@@ -44,12 +59,14 @@ router.put("/:id", async (req, res) => {
     }
     /* all ok, update the product. */
     /* id in the req.body should be the same as req.params.id */
-    const productData = await Product.update({... req.body}, 
+    const productData = await Product.update(
+      { ...req.body },
       {
         where: {
-          id: req.params.id
-        }
-      });
+          id: req.params.id,
+        },
+      }
+    );
 
     if (productData) {
       res.status(200).json("Product updated successfully");
@@ -71,13 +88,13 @@ router.delete("/:id", async (req, res) => {
       },
     });
     if (product) {
-      res.status(200).json("Product deleted successfully");
+      res.status(200).json({ message: "Product deleted successfully" });
     } else {
-      res.status(400).json("Product not deleted");
+      res.status(400).json({ message: "Product not deleted" });
     }
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    res.status(500).json({ ...err, message: "A server error occurred" });
   }
 });
 

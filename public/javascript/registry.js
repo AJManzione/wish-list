@@ -4,7 +4,7 @@ const createNewRegistry = async function (event) {
   const regName = document.querySelector("#reg-name");
   const selectedDate = document.querySelector("#datepicker");
 
-  if (!regName && !selectedDate) {
+  if (!regName.value || !selectedDate.value) {
     alert("Please enter the fields to create a registry");
     return;
   }
