@@ -12,25 +12,38 @@
 </div>   
 
 
-
 <div class="container">
+  <!--  <canvas id="source" width="300" height="300" onclick="image_fxpreset_focus('source');"></canvas> -->
   {{!-- <div class="row d-flex justify-content-around"> --}}
+
+<div class="d-flex justify-content-center">
+  <canvas id="source" width="520" height="350" onmouseover="image_fxpreset_retro('source');">
+  </canvas>
+</div>
     <ul class="row" id="home-display">
       <div class="col col-lg-3 col-md-6 col-sm-12 .col-12">
-        <a href="/dashboard"><img src="/images/baby-shower.jpeg" alt=""></a>
+        <a href="/dashboard"><img id="img1" src="/images/baby-shower.jpeg" alt=""></a>
       </div>
       <div class="col col-lg-3 col-md-6 col-sm-12 .col-12">
-        <a href="/dashboard"><img src="/images/birthday.jpeg" alt=""></a>
+        <a href="/dashboard"><img id="img2" src="/images/birthday.jpeg" alt=""></a>
       </div>
       <div class="col col-lg-3 col-md-6 col-sm-12 .col-12">
-        <a href="/dashboard"><img src="/images/wedding.jpeg" alt=""></a>
+        <a href="/dashboard"><img id="img3" src="/images/wedding.jpeg" alt=""></a>
       </div>
       <div class="col col-lg-3 col-md-6 col-sm-12 .col-12">
-        <a href="/dashboard"><img src="/images/holidays.png" alt=""></a>
+        <a href="/dashboard"><img id="img4" src="/images/holidays.png" alt=""></a>
       </div>
     </ul>
   {{!-- </div> --}}
 </div>
+<!--
+      <ul>  
+				<li onclick="image_fxpreset_cinemascope('source');">A</li>
+				<li onclick="image_fxpreset_retro('source');">B</li>
+				<li onclick="image_fxpreset_bnw('source');">C</li>
+				<li onclick="image_fxpreset_focus('source');">D</li>
+			</ul>
+ -->     
 
 <div class="row d-flex justify-content-center">
   <hr class="w-75">
