@@ -18,10 +18,12 @@
                         Category: {{category.name}}
                     </li>
                 </ul>
+                {{#if isOwned}}
                 <button class="pl-5 pr-5 btn-primary mt-3 rounded" data-toggle="modal" data-target="" id="product-edit"
                     data-id="{{id}}">Edit</button>
                 <button class="pl-5 pr-5 btn-primary mt-3 rounded" data-toggle="modal" data-target="#delete-product"
                     id="product-delete" data-id="{{id}}">Delete</button>
+                {{/if}}
             </div>
         </div>
     </div>

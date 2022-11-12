@@ -9,6 +9,7 @@
                 <div class="card-body">
                     <p class="text-center">{{registry.description}}</p>
                     <ul>
+                        {{#if isOwned}}
                         <li class="text-center">
                             <a type="button" data-toggle="modal" data-target="#add-product">
                                 <button class="pl-5 pr-5 btn-primary mt-3 rounded">Add Product</button>
@@ -19,18 +20,18 @@
                             </a>
 
                         </li>
+                        {{/if}}
+                        {{!-- STYLE THIS --}}
+                        {{#if hasProducts}}
                         <li>
-                            {{!-- STYLE THIS --}}
-                            {{#if hasProducts}}
                             {{#each registry.products as |product|}}
                             {{> product}}
                             {{/each}}
                         </li>
-                        <li>
-                            {{else}}
-                            <br><br>
-                            <p class="text-center">Add products to your registry!</p>
-                        </li>
+                        <h3 class="text-center mt-4">Total: ${{totalCost}}</h3>
+                        {{else}}
+                        <br><br>
+                        <p class="text-center">Add products to your registry!</p>
                         {{/if}}
                     </ul>
                 </div>

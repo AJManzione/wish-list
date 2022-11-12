@@ -82,11 +82,16 @@ router.get("/registry/:id", async (req, res) => {
     totalCost += parseFloat(registry.dataValues.products[i].price);
   }
 
+  let registryData = registry.get({ plain: true });
+  registryData.products.forEach((product) => {
+    product.isOwned = registry.user_id == req.session.userId;
+  });
+
   res.render("new-registry", {
-    registry: registry.get({ plain: true }),
+    registry: registryData,
     totalCost,
     hasProducts: registry.dataValues.products.length > 0,
-    isOwned: registry.userId == req.session.userId,
+    isOwned: registry.user_id == req.session.userId,
     loggedIn: req.session.loggedIn,
   });
 });
@@ -95,7 +100,6 @@ router.get("/dashboard/edit/:id", async (req, res) => {
   if (!req.session.loggedIn) {
     res.render("login");
   } else {
-    console.log(req.params);
     const registryData = await Registry.findByPk(req.params.id);
     const registry = registryData.get({ plain: true });
 
