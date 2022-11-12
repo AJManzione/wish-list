@@ -11,4 +11,9 @@ module.exports = {
     let date = new Date(input);
     return date.toDateString();
   },
+
+  displayLink(input) {
+    console.log(input);
+    return input != null ? input.toString().length > 0 : false;
+  },
 };

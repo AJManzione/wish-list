@@ -6,9 +6,11 @@
                     <li class="pt-1">
                         <h3>{{name}}</h3>
                     </li>
+                    {{#if (displayLink link)}}
                     <li>
                         Link: <a href="{{link}}">{{link}}</a>
                     </li>
+                    {{/if}}
                     <li class="pt-1">
                         Price: {{price}}
                     </li>
@@ -16,6 +18,10 @@
                         Category: {{category.name}}
                     </li>
                 </ul>
+                <button class="pl-5 pr-5 btn-primary mt-3 rounded" data-toggle="modal" data-target="" id="product-edit"
+                    data-id="{{id}}">Edit</button>
+                <button class="pl-5 pr-5 btn-primary mt-3 rounded" data-toggle="modal" data-target="#delete-product"
+                    id="product-delete" data-id="{{id}}">Delete</button>
             </div>
         </div>
     </div>

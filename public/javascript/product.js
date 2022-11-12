@@ -8,6 +8,11 @@ let urlSegments = document.location.toString().split("/");
 let registry_id = urlSegments[urlSegments.length - 1];
 
 addProductBtnEl.addEventListener("click", async (event) => {
+  if (!name.value) {
+    alert("Please enter a name");
+    return;
+  }
+
   const response = await fetch("/api/product", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -20,9 +25,9 @@ addProductBtnEl.addEventListener("click", async (event) => {
     }),
   });
 
-  let responseData = await response.json();
   if (!response.ok) {
-    alert(responseData.message);
+    alert((await response.json()).message);
+    return;
   }
 
   document.location.replace("/registry/" + registry_id);

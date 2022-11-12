@@ -99,7 +99,7 @@
     <div class="modal-dialog shadow" role="document">
         <div class="modal-content secondary-background">
             <div class="modal-header d-flex justify-content-center">
-                <p class="modal-title header-text text-shadow">Are You Sure You Want To Delete This Registry?</p>
+                <p class="modal-title header-text text-shadow">Are you sure you want to delete this registry?</p>
                 <div>
                     <button type="button" class="btn" data-dismiss="modal">
                         X
@@ -117,8 +117,35 @@
     </div>
 </div>
 
+{{!-- Modal for deleting products --}}
+{{!-- Same as above, so that one could probably be reused too, but that might require reworking how it interacts with
+the other functions --}}
 
+<div class="modal fade" id="delete-product" tabindex="-1" role="dialog" aria-labelledby="delete-product"
+    aria-hidden="true">
+    <div class="modal-dialog shadow" role="document">
+        <div class="modal-content secondary-background">
+            <div class="modal-header d-flex justify-content-center">
+                <p class="modal-title header-text text-shadow">Are you sure you want yo delete this product?</p>
+                <div>
+                    <button type="button" class="btn" data-dismiss="modal">
+                        X
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+                <div class="flex-row">
+                    <button id="product-delete-btn" class="pl-5 pr-5 btn-danger flex-item btn-lg"
+                        data-id="">Yes</button>
+                    <button id="product-dont-delete" class="pl-5 pr-5 btn-primary flex-item btn-lg" data-dismiss="modal"
+                        data-id="">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--<script src="/javascript/add-product.js"></script>-->
 <script src="/javascript/product.js"></script>
 <script src="/javascript/delete-registry.js"></script>
+<script src="/javascript/product-management.js"></script>
