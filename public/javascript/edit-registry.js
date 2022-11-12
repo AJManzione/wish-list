@@ -3,34 +3,32 @@
 // fetch(/api/registry/id)
 //console.log(window.location.href);
 
+const name = document.querySelector("#reg-name");
+const description = document.querySelector("#desc");
+const date = document.querySelector("#datepicker");
+let urlSegments = document.location.toString().split("/");
+let registry_id = urlSegments[urlSegments.length - 1];
+
 async function editFormHandler(event) {
-    event.preventDefault();
-    const name = document.querySelector('#reg-name').value;
-    const description = document.querySelector('#desc').value;
-    const date = document.querySelector('#datepicker').value;
+  const response = await fetch(`/api/registry/${registry_id}`, {
+    method: "PUT",
+    body: JSON.stringify({
+      name: name.value,
+      description: description.value,
+      date: date.value,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
-    const id = parseInt(document.querySelector("#registryID").innerText);
-    console.log(id)
-
-    const response = await fetch(`/api/registry/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify({
-          name: name.value,
-          description: description.value,
-          registry_id: id,
-          date: date.value
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-      
-      if (response.ok) {
-        document.location.replace(`/registry/${id}`);
-      } else {
-        alert(response.statusText);
-      }
-
+  if (response.ok) {
+    document.location.replace(`/registry/${registry_id}`);
+  } else {
+    alert(response.statusText);
+  }
 }
 
-document.getElementById('edit-registry-btn').addEventListener('click', editFormHandler);
+document
+  .getElementById("edit-registry-btn")
+  .addEventListener("click", editFormHandler);

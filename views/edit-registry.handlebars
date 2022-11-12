@@ -9,20 +9,21 @@
                     <form class="new-reg">
                         <label for="reg-name" class="label">Name your registry</label>
                         <br>
-                        <div id="registryID" style="display:none">{{registry.id}}</div>
-                        <input type="text" class="w-100 entry-field rounded text-input" id="reg-name" value={{registry.name}} />
+                        <input type="text" class="w-100 entry-field rounded text-input" id="reg-name"
+                            value={{registry.name}} />
                         <br><br>
                         <label for="reg-desc" class="label">Describe your registry</label>
                         <br>
-                        <textarea class="form-control " aria-label="With textarea" id="desc">{{registry.description}}</textarea>
+                        <textarea class="form-control " aria-label="With textarea"
+                            id="desc">{{registry.description}}</textarea>
                         <br>
                         <label for="date">Registry expiration</label>
                         <br>
                         <p>Date: <input type="text" id="datepicker" value={{getDate registry.date}}></p>
-                        <div class="card-footer d-flex justify-content-center">
-                            <button id="edit-registry-btn" class="btn btn-primary">Submit</button>
-                        </div>
                     </form>
+                    <div class="card-footer d-flex justify-content-center">
+                        <button id="edit-registry-btn" class="btn btn-primary">Submit</button>
+                    </div>
                 </div>
             </div>
         </div>

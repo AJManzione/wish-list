@@ -9,6 +9,8 @@ const session = require("express-session");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const categorySeedData = require("./seeds/categorySeeds.json");
+const Category = require("./models/Category.js");
 
 const sess = {
   secret: "Super secret secret",
@@ -34,6 +36,7 @@ app.get("/*", (req, res) => {
   res.render("404", { loggedIn: req.session.loggedIn });
 });
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: false }).then(async () => {
+  // await Category.bulkCreate(categorySeedData);
   app.listen(PORT, () => console.log("Now listening"));
 });
