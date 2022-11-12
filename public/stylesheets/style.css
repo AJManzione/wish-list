@@ -31,6 +31,12 @@ body {
     background-size: cover;
 }
 
+header {
+    position: sticky;
+    z-index: 100;
+    top: 0;
+}
+
 .card-header a{
     font-size: 40px;
     font-weight: 900;
@@ -109,6 +115,10 @@ header {
     height: 300px;
     object-fit: cover;
     box-shadow: 10px 10px, black;
+}
+
+#four-oh-four-image {
+    opacity: 40%;
 }
 
 /*
