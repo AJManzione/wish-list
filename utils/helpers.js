@@ -1,7 +1,6 @@
 module.exports = {
   getDate(input) {
     let date = new Date(input);
-    console.log(date.toDateString());
     return (
       date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear()
     );
@@ -13,7 +12,6 @@ module.exports = {
   },
 
   displayLink(input) {
-    console.log(input);
     return input != null ? input.toString().length > 0 : false;
   },
 };
