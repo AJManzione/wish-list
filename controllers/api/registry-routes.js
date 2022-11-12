@@ -27,8 +27,13 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
+  if (!req.session.loggedIn) {
+    return;
+  }
+
   Registry.update(req.body, {
     where: {
+      user_id: req.session.userId,
       id: req.params.id,
     },
   })
@@ -46,8 +51,13 @@ router.put("/:id", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
+  if (!req.session.loggedIn) {
+    return;
+  }
+
   Registry.destroy({
     where: {
+      user_id: req.session.userId,
       id: req.params.id,
     },
   })

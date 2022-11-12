@@ -9,9 +9,11 @@
                 <div class="card-body">
                     <p class="text-center">{{registry.description}}</p>
                     <ul>
+                        {{#if isOwned}}
                         <li class="text-center">
                             <a type="button" data-toggle="modal" data-target="#add-product">
-                                <button class="pl-5 pr-5 btn-primary mt-3 rounded">Add Product</button>
+                                <button class="pl-5 pr-5 btn-primary mt-3 rounded" id="show-add-product-modal">Add
+                                    Product</button>
                             </a>
                             <button id='edit-btn' class="btn-primary w-25 mt-3 rounded">Edit Registry</button>
                             <a type="button" data-toggle="modal" data-target="#delete-registry">
@@ -19,18 +21,18 @@
                             </a>
 
                         </li>
+                        {{/if}}
+                        {{!-- STYLE THIS --}}
+                        {{#if hasProducts}}
                         <li>
-                            {{!-- STYLE THIS --}}
-                            {{#if hasProducts}}
                             {{#each registry.products as |product|}}
                             {{> product}}
                             {{/each}}
                         </li>
-                        <li>
-                            {{else}}
-                            <br><br>
-                            <p class="text-center">Add products to your registry!</p>
-                        </li>
+                        <h3 class="text-center mt-4">Total: ${{totalCost}}</h3>
+                        {{else}}
+                        <br><br>
+                        <p class="text-center">Add products to your registry!</p>
                         {{/if}}
                     </ul>
                 </div>
@@ -45,7 +47,7 @@
     <div class="modal-dialog shadow" role="document">
         <div class="modal-content secondary-background">
             <div class="modal-header d-flex justify-content-center">
-                <h2 class="modal-title header-text text-shadow">Add a Product</h2>
+                <h2 class="modal-title header-text text-shadow" id="product-modal-title">Add a Product</h2>
                 <div>
                     <button type="button" class="btn" data-dismiss="modal">
                         X
@@ -82,7 +84,8 @@
                                 <input type="product-link" class="w-100 text-input" id="product-url"
                                     placeholder="https://amazon.com/products">
                             </form>
-                            <button class="btn-primary w-100 mt-4 mb-2 btn-lg" id="add-product-btn">Add Product</button>
+                            <button class="btn-primary w-100 mt-4 mb-2 btn-lg" id="add-product-btn" data-id="">Add
+                                Product</button>
                         </div>
                     </div>
                 </div>
@@ -99,7 +102,7 @@
     <div class="modal-dialog shadow" role="document">
         <div class="modal-content secondary-background">
             <div class="modal-header d-flex justify-content-center">
-                <p class="modal-title header-text text-shadow">Are You Sure You Want To Delete This Registry?</p>
+                <p class="modal-title header-text text-shadow">Are you sure you want to delete this registry?</p>
                 <div>
                     <button type="button" class="btn" data-dismiss="modal">
                         X
@@ -117,8 +120,35 @@
     </div>
 </div>
 
+{{!-- Modal for deleting products --}}
+{{!-- Same as above, so that one could probably be reused too, but that might require reworking how it interacts with
+the other functions --}}
 
+<div class="modal fade" id="delete-product" tabindex="-1" role="dialog" aria-labelledby="delete-product"
+    aria-hidden="true">
+    <div class="modal-dialog shadow" role="document">
+        <div class="modal-content secondary-background">
+            <div class="modal-header d-flex justify-content-center">
+                <p class="modal-title header-text text-shadow">Are you sure you want yo delete this product?</p>
+                <div>
+                    <button type="button" class="btn" data-dismiss="modal">
+                        X
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+                <div class="flex-row">
+                    <button id="product-delete-btn" class="pl-5 pr-5 btn-danger flex-item btn-lg"
+                        data-id="">Yes</button>
+                    <button id="product-dont-delete" class="pl-5 pr-5 btn-primary flex-item btn-lg" data-dismiss="modal"
+                        data-id="">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!--<script src="/javascript/add-product.js"></script>-->
-<script src="/javascript/product.js"></script>
+{{#if isOwned}}
 <script src="/javascript/delete-registry.js"></script>
+<script src="/javascript/product-management.js"></script>
+{{/if}}
