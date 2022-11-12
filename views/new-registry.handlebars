@@ -12,7 +12,8 @@
                         {{#if isOwned}}
                         <li class="text-center">
                             <a type="button" data-toggle="modal" data-target="#add-product">
-                                <button class="pl-5 pr-5 btn-primary mt-3 rounded">Add Product</button>
+                                <button class="pl-5 pr-5 btn-primary mt-3 rounded" id="show-add-product-modal">Add
+                                    Product</button>
                             </a>
                             <button id='edit-btn' class="btn-primary w-25 mt-3 rounded">Edit Registry</button>
                             <a type="button" data-toggle="modal" data-target="#delete-registry">
@@ -46,7 +47,7 @@
     <div class="modal-dialog shadow" role="document">
         <div class="modal-content secondary-background">
             <div class="modal-header d-flex justify-content-center">
-                <h2 class="modal-title header-text text-shadow">Add a Product</h2>
+                <h2 class="modal-title header-text text-shadow" id="product-modal-title">Add a Product</h2>
                 <div>
                     <button type="button" class="btn" data-dismiss="modal">
                         X
@@ -83,7 +84,8 @@
                                 <input type="product-link" class="w-100 text-input" id="product-url"
                                     placeholder="https://amazon.com/products">
                             </form>
-                            <button class="btn-primary w-100 mt-4 mb-2 btn-lg" id="add-product-btn">Add Product</button>
+                            <button class="btn-primary w-100 mt-4 mb-2 btn-lg" id="add-product-btn" data-id="">Add
+                                Product</button>
                         </div>
                     </div>
                 </div>
@@ -146,7 +148,7 @@ the other functions --}}
     </div>
 </div>
 
-<!--<script src="/javascript/add-product.js"></script>-->
-<script src="/javascript/product.js"></script>
+{{#if isOwned}}
 <script src="/javascript/delete-registry.js"></script>
 <script src="/javascript/product-management.js"></script>
+{{/if}}

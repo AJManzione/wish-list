@@ -4,23 +4,23 @@
             <div class="card-body">
                 <ul>
                     <li class="pt-1">
-                        <h3>{{name}}</h3>
+                        <h3 id="product-name-{{id}}">{{name}}</h3>
                     </li>
                     {{#if (displayLink link)}}
                     <li>
-                        Link: <a href="{{link}}">{{link}}</a>
+                        Link: <a href="{{link}}" id="product-link-{{id}}">{{link}}</a>
                     </li>
                     {{/if}}
                     <li class="pt-1">
-                        Price: {{price}}
+                        Price: <h6 id="product-price-{{id}}" style="display: inline;">{{price}}</h6>
                     </li>
                     <li class="pt-1">
-                        Category: {{category.name}}
+                        Category: <h6 id="product-category-{{id}}" style="display: inline;">{{category.name}}</h6>
                     </li>
                 </ul>
                 {{#if isOwned}}
-                <button class="pl-5 pr-5 btn-primary mt-3 rounded" data-toggle="modal" data-target="" id="product-edit"
-                    data-id="{{id}}">Edit</button>
+                <button class="pl-5 pr-5 btn-primary mt-3 rounded" data-toggle="modal" data-target="#add-product"
+                    id="product-edit" data-id="{{id}}">Edit</button>
                 <button class="pl-5 pr-5 btn-primary mt-3 rounded" data-toggle="modal" data-target="#delete-product"
                     id="product-delete" data-id="{{id}}">Delete</button>
                 {{/if}}

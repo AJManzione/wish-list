@@ -3,8 +3,6 @@ const logout = document.getElementById("logout-link");
 var granimInstance = new Granim({
   element: "#canvas-basic",
   direction: "left-right",
-  //opacity: [1,1],
-  isPausedWhenNotInView: true,
   states: {
     "default-state": {
       gradients: [
