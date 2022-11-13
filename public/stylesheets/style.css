@@ -25,10 +25,8 @@
     font-family: Scrypta;
 }
 
-
 body {
-    background-image: url('/images/white-paper-texture-1.jpeg');
-    background-size: cover;
+    background-color: rgb(183, 237, 202);
 }
 
 header {
