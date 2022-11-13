@@ -15,8 +15,8 @@
 ## Description
 This is a full stack application that implements a wish list or a gift registry for an event. Through an easy to use interface, a user can register with the app, create any number of registries. The user can manage the registries they own by adding, updating or removing products. The registries are also visible to any visitor to the page or a guest to an event to look up items to fulfill.
 
-The deployed app is at: https://wish-list-maker.herokuapp.com/
-The github repo is: https://github.com/AJManzione/wish-list
+- The deployed app is at: https://wish-list-maker.herokuapp.com/
+- The github repo is: https://github.com/AJManzione/wish-list
 
 ## Wireframe
 
@@ -111,4 +111,5 @@ This application is covered under the [MIT License](https://opensource.org/licen
 ## Author Links
 [GitHub] [Anthony]() [Jie](https://github.com/Zoujiejie) [William]() [Priya](https://github.com/sbhikshe)\
 [LinkedIn] [Anthony]() [Jie](https://www.linkedin.com/in/jie-zou-2779ab161/) [William]() [Priya](https://www.linkedin.com/in/sripriya-bhikshesvaran-8520992/)
+
 
