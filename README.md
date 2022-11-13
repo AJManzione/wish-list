@@ -109,6 +109,6 @@ From the browser navigate to http://localhost:3001 to use the frontend website.
 This application is covered under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Author Links
-[GitHub] [Anthony]() [Jie]() [William]() [Priya](https://github.com/sbhikshe)\
-[LinkedIn] [Anthony]() [Jie]() [William]() [Priya](https://www.linkedin.com/in/sripriya-bhikshesvaran-8520992/)
+[GitHub] [Anthony]() [Jie](https://github.com/Zoujiejie) [William]() [Priya](https://github.com/sbhikshe)\
+[LinkedIn] [Anthony]() [Jie](https://www.linkedin.com/in/jie-zou-2779ab161/) [William]() [Priya](https://www.linkedin.com/in/sripriya-bhikshesvaran-8520992/)
 
