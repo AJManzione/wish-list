@@ -38,6 +38,90 @@ This is a full stack application that implements a wish list or a gift registry 
 6. List of products / items in the registry
 ![List](./public/images/wireframe/WL_6.png)
 
+## Code Snippets
+### API Routes
+| Resource | URL | HTTP Verb | Userd For |
+| ----------- | ----------- | ----------- | ----------- |
+| USER | /api/user/login | GET | API route for logging in a user |
+| ----------- | ----------- | ----------- | ----------- |
+| USER | /api/user/logout | POST | API route for logging out a user |
+| ----------- | ----------- | ----------- | ----------- |
+| USER | /api/user/signup | POST | APi route for creating a new user |
+| ----------- | ----------- | ----------- | ----------- |
+| USER REGISTRY | /api/registry | POST | Creating a new registry belonging to a specific user |
+| ----------- | ----------- | ----------- | ----------- |
+| USER REGISTRY | /api/registry/:id | PUT | Edit a registry by id |
+| ----------- | ----------- | ----------- | ----------- |
+| USER REGISTRY | /api/registry/:id | DELETE | Delete a registry given the id |
+| ----------- | ----------- | ----------- | ----------- |
+| PRODUCT | /api/product | POST | Creating a new product (category id, registry id, user_id) |
+| ----------- | ----------- | ----------- | ----------- |
+| PRODUCT | api/product/:id | PUT | For changing the price, name, link, category_id, other details |
+| ----------- | ----------- | ----------- | ----------- |
+| PRODUCT | api/product/:id | DELETE | For deleting one product by id |
+| ----------- | ----------- | ----------- | ----------- |
+| CATEGORIES | /api/category | GET | Get all categories to then use for drop down |
+| ----------- | ----------- | ----------- | ----------- |
+
+### Model Associations
+
+```
+User.hasMany(Registry, {
+  foreignKey: "user_id",
+  onDelete: "cascade",
+});
+
+Registry.belongsTo(User, {
+  foreignKey: "user_id",
+  onDelete: "cascade",
+});
+
+Category.hasMany(Product, {
+  foreignKey: "category_id",
+});
+
+Product.belongsTo(Category, {
+  foreignKey: "category_id",
+});
+
+Product.belongsTo(Registry, {
+  foreignKey: "registry_id",
+  onDelete: "cascade",
+});
+
+Registry.hasMany(Product, {
+  foreignKey: "registry_id",
+  onDelete: "cascade",
+});
+
+User.hasMany(Product, {
+  foreignKey: "user_id",
+  onDelete: "cascade",
+});
+
+Product.belongsTo(User, {
+  foreignKey: "user_id",
+  onDelete: "cascade",
+});
+```
+
+### HTML Routes
+| Resource | URL | HTTP Verb | Userd For |
+| ----------- | ----------- | ----------- | ----------- |
+| USER CREATE | /login | GET | Returns an HTML page either  create a new user OR signing in a user |
+| ----------- | ----------- | ----------- | ----------- |
+| REGISTRY | /registry | GET | Gets all registries belonging to a single user |
+| ----------- | ----------- | ----------- | ----------- |
+| SINGLE REGISTRY | registry/:id | GET | Get a single registry |
+| ----------- | ----------- | ----------- | ----------- |
+| EDIT REGISTRY BY ID | /dashboard/edit/:id | GET | Get page to edit a single registry by id |
+| ----------- | ----------- | ----------- | ----------- |
+| HOMEPAGE | / | GET | Gets all registries. Username, First_name, date_created |
+| ----------- | ----------- | ----------- | ----------- |
+| LANDING | /* | GET | 404 catch all |
+| ----------- | ----------- | ----------- | ----------- |
+| DASHBOARD | /dashboard | GET | Gets all registries for that current user_id |
+| ----------- | ----------- | ----------- | ----------- |
 
 ## Installation
 The application has been deployed to [Heroku](https://wish-list-maker.herokuapp.com/).  
