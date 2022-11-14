@@ -36,7 +36,7 @@ app.get("/*", (req, res) => {
   res.render("404", { loggedIn: req.session.loggedIn });
 });
 
-sequelize.sync({ force: false }).then(async () => {
-  // await Category.bulkCreate(categorySeedData);
+sequelize.sync({ force: true }).then(async () => {
+await Category.bulkCreate(categorySeedData);
   app.listen(PORT, () => console.log("Now listening"));
 });
