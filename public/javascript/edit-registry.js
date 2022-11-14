@@ -3,7 +3,8 @@
 // fetch(/api/registry/id)
 //console.log(window.location.href);
 
-const name = document.querySelector("#reg-name");
+const regName = document.querySelector("#reg-name");
+console.log(regName)
 const description = document.querySelector("#desc");
 const date = document.querySelector("#datepicker");
 let urlSegments = document.location.toString().split("/");
@@ -13,7 +14,7 @@ async function editFormHandler(event) {
   const response = await fetch(`/api/registry/${registry_id}`, {
     method: "PUT",
     body: JSON.stringify({
-      name: name.value,
+      name: regName.value,
       description: description.value,
       date: date.value,
     }),
