@@ -26,4 +26,7 @@ function redirectFunc() {
 }
 
 
-document.querySelector('.click-img').addEventListener('click', redirectFunc)
+document.querySelector('.click-img-1').addEventListener('click', redirectFunc)
+document.querySelector('.click-img-2').addEventListener('click', redirectFunc)
+document.querySelector('.click-img-3').addEventListener('click', redirectFunc)
+document.querySelector('.click-img-4').addEventListener('click', redirectFunc)
