@@ -111,6 +111,7 @@ header {
 }
 
 #img-container img {
+    cursor: pointer;
     margin: 10px;
     width: 20%;
     height: 20%;
@@ -181,3 +182,4 @@ header {
     }
 
 }
+
