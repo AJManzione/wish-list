@@ -49,7 +49,7 @@
 
 <br> <br> <br>
 
-<div class="container">
+<div class="container custom-home-reg">
   <ul>
     {{#each registries as |registry| }}
     <li class="flex-row p-5">
@@ -59,19 +59,26 @@
             <a href="/registry/{{registry.id}}">{{registry.name}}</a>
           </h4>
           <h5>By: {{registry.user.username}}</h5>
+            <h6>
+            <button class="btn" type="button" data-toggle="collapse" data-target="#collapse{{registry.id}}" aria-expanded="false" aria-controls="collapse{{registry.id}}">
+              Show More &#9662;
+            </button>
         </div>
-        <div class="card-body text-center">
-          <br>
-          <p>{{registry.description}}</p>
-          <br>
+        <div class="collapse" id="collapse{{registry.id}}">
+          <div class="card-body text-center">
+            <br>
+            <p>{{registry.description}}</p>
+            <br>
+          </div>
+          <div class="card-footer text-center">
+            <br>
+            <p>{{ getDate registry.date}}</p>
+            <br>
+          </div>
         </div>
-        <div class="card-footer text-center">
-          <br>
-          <p>{{ getDate registry.date}}</p>
-          <br>
-        </div>
-      </div>
     </li>
     {{/each}}
   </ul>
 </div>
+
+
