@@ -20,3 +20,10 @@ if (logout) {
     document.location.replace("/");
   });
 }
+
+function redirectFunc() {
+  document.location.replace("/dashboard")
+}
+
+
+document.querySelector('.click-img').addEventListener('click', redirectFunc)
