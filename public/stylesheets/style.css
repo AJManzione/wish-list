@@ -139,7 +139,8 @@ header {
     z-index: -1; 
 }
 
-@media (max-width: 575px) {
+
+@media (max-width: 630px) {
 
     .custom-welcome h1 {
         font-size: 50px;
