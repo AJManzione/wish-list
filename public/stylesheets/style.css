@@ -105,6 +105,18 @@ header {
     margin-top: 200px;
 }
 
+#img-container {
+    display: flex;
+    justify-content: center;
+}
+
+#img-container img {
+    margin: 10px;
+    width: 20%;
+    height: 20%;
+    overflow: hidden;
+}
+
 .create-registry {
     font-size: 20px;
 }
@@ -118,13 +130,6 @@ header {
     background-color: rgb(161, 200, 232);
 }
 
-#home-display img {
-    margin: 10px;
-    width:  250px;
-    height: 250px;
-    object-fit: cover;
-    box-shadow: 10px 10px, black;
-}
 
 #four-oh-four-image {
     opacity: 40%;
@@ -140,7 +145,7 @@ header {
 }
 
 
-@media (max-width: 630px) {
+ @media (max-width: 630px) {
 
     .custom-welcome h1 {
         font-size: 50px;
@@ -150,13 +155,6 @@ header {
     .custom-welcome h2 {
         font-size: 30px;
         font-family: Scrypta;
-    }
-
-    #home-display img {
-        display: inline-block;
-        margin: 3px;
-        max-width: 115px;
-        max-height: 115px;
     }
 
     .custom-home-reg {
@@ -183,4 +181,3 @@ header {
     }
 
 }
-
