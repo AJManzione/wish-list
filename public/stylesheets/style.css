@@ -108,9 +108,9 @@ header {
 }
 
 #home-display img {
-    padding: 30px;
-    width:  300px;
-    height: 300px;
+    margin: 10px;
+    width:  250px;
+    height: 250px;
     object-fit: cover;
     box-shadow: 10px 10px, black;
 }
@@ -128,20 +128,43 @@ header {
     z-index: -1; 
 }
 
-@media (max-width: 575px) {
-    #home-display img {
-        max-width: 150px;
-        max-height: 150px;
-        padding: 10px;
-        margin-left: -22px;
+@media (max-width: 580px) {
 
+    .custom-welcome h1 {
+        font-size: 50px;
+        font-family: Scrypta;
     }
-  }
-@media (max-width: 530px) {
+
+    .custom-welcome h2 {
+        font-size: 30px;
+        font-family: Scrypta;
+    }
+
+
     #home-display img {
+        display: inline-block;
+        margin: 2px;
         max-width: 120px;
         max-height: 120px;
-        padding: 10px;
-        margin-left: -15px;
     }
-  }
+
+
+    .card-header h4 a {
+        font-size: 90%;
+    }
+
+    .card-header h5 {
+        font-size: 40%;
+    }
+    
+    .card-body p {
+        font-size: 90%;
+    }
+    .card-footer p {
+        font-size: 75%;
+    }
+
+
+
+}
+
