@@ -23,9 +23,8 @@
 
 </head>
 
-
-<header>
-  <nav>
+{{!-- Old Nav --}}
+{{!--   <nav>
     <a id="logo" href="/">
       <img src="/images/Wish List Logo-01 (1).png" alt="">
     </a>
@@ -52,6 +51,39 @@
       </li>
       {{/if}}
     </ul>
+  </nav> --}}
+
+
+  <header>
+    <nav class="navbar">
+      <a class="navbar-brand"id="logo" href="/">
+        <img src="/images/Wish List Logo-01 (1).png" alt="">
+      </a>
+
+    <button class="navbar-toggler toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+    aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        {{#if loggedIn}}
+        <li class="nav-item">
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="logout-link" href="#">
+            <button>Logout</button>
+          </a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
   </nav>
 </header>
 
