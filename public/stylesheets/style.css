@@ -88,6 +88,15 @@ header {
     float: right;
 }
 
+.toggler {
+    font-size: 30px;
+}
+
+.toggler:hover {
+    color: rgb(171, 146, 2);
+    font-size: 30px;
+}
+
 #logo img{
     margin: 15px;
     max-width: 120px;
@@ -95,13 +104,22 @@ header {
 }
 
 .nav-link {
+    color: black;
     margin: 13px;
 }
 
 .nav-item button {  
     text-decoration: none;
-    background-color: none;
+    background-color: transparent;
     border: none;
+}
+
+.nav-link:hover {
+    color: rgb(171, 146, 2);
+}
+
+.nav-item button:hover {
+    color: rgb(171, 146, 2);
 }
 
 .below-nav {
@@ -151,6 +169,7 @@ header {
 
  @media (max-width: 630px) {
 
+
     .custom-welcome h1 {
         font-size: 50px;
         font-family: Scrypta;
@@ -186,3 +205,6 @@ header {
 
 }
 
+@media (max-width: 400px) {
+
+}
