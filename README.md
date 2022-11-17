@@ -1,7 +1,9 @@
-# wish-list
- A place to create wish-lists and registries, add and delete items
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Wish-List
 
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+## Create an account, login and create wish-lists and registries - Add products to those registries and set a date for the registry to expire!
+
+![walkthrough](./public/images/readme/Web-Walk-Through.gif)
 
 ## Table Of Contents
 * [Description](#description)
@@ -15,31 +17,16 @@
 ## Description
 This is a full stack application that implements a wish list or a gift registry for an event. Through an easy to use interface, a user can register with the app, create any number of registries. The user can manage the registries they own by adding, updating or removing products. The registries are also visible to any visitor to the page or a guest to an event to look up items to fulfill.
 
+
 - The deployed app is at: https://wish-list-maker.herokuapp.com/
 - The github repo is: https://github.com/AJManzione/wish-list
 
+
 ## Wireframe
 
-1. Homepage
-![Homepage](./public/images/wireframe/WL_1.png)
+![Homepage](./public/images/wireframe/Wish-List-Wireframe-Design-Google-Slides.gif)
 
-2. Sign up
-![Sign up](./public/images/wireframe/WL_2.png)
-
-3. Dashboard
-![Dashboard](./public/images/wireframe/WL_3.png)
-
-4. Create a new registry
-![Create](./public/images/wireframe/WL_4.png)
-
-5. Add a new product / item to the registry
-![Add](./public/images/wireframe/WL_5.png)
-
-6. List of products / items in the registry
-![List](./public/images/wireframe/WL_6.png)
-
-## Code Snippets
-### API Routes
+## API Routes
 | Resource | URL | HTTP Verb | Userd For |
 | ----------- | ----------- | ----------- | ----------- |
 | USER | /api/user/login | GET | API route for logging in a user |
@@ -63,7 +50,7 @@ This is a full stack application that implements a wish list or a gift registry 
 | CATEGORIES | /api/category | GET | Get all categories to then use for drop down |
 | ----------- | ----------- | ----------- | ----------- |
 
-### Model Associations
+## Model Associations
 
 ```
 User.hasMany(Registry, {
@@ -162,7 +149,7 @@ $ cd ..
 $ npm i
 ```
 
-## Usage
+5. Running that application
 
 Start the application from the command line with the following command in the project directory:
 
@@ -170,6 +157,10 @@ Start the application from the command line with the following command in the pr
 $ node server.js
 ```
 From the browser navigate to http://localhost:3001 to use the frontend website.
+
+## Usage
+
+This application may be used by all whom wish to use it.
 
 ## Technologies
 - HTML / CSS
@@ -195,5 +186,8 @@ This application is covered under the [MIT License](https://opensource.org/licen
 ## Author Links
 [GitHub] [Anthony]() [Jie](https://github.com/Zoujiejie) [William](https://github.com/DeltaBreaker) [Priya](https://github.com/sbhikshe)\
 [LinkedIn] [Anthony]() [Jie](https://www.linkedin.com/in/jie-zou-2779ab161/) [William](https://www.linkedin.com/in/william-crain-2650a317a/) [Priya](https://www.linkedin.com/in/sripriya-bhikshesvaran-8520992/)
+
+## Questions
+- please email dev.anthony.manzione@gmail.com
 
 
