@@ -74,6 +74,7 @@ header {
 }
 
 header {
+    min-height: 12vh;
     min-width: 100vw;
     background-color: rgb(183, 237, 202);
 }
@@ -84,15 +85,17 @@ header {
 
 .navbar-nav {
     font-size: 26px;
-    margin-left: auto;
+    float: right;
 }
 
-.logo {
-    margin-right: auto;
+#logo img{
+    margin: 15px;
+    max-width: 120px;
+    float: left;
 }
 
 .nav-link {
-    margin: 6px;
+    margin: 13px;
 }
 
 .nav-item button {  
